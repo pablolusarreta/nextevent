@@ -1,0 +1,120 @@
+/*    F O R M U L A R I O      /////////////////////////////////////////////////// */
+#telon {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#formulario {
+    /*display: block;*/
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: calc(50vw - 420px);
+    top: calc(50vh - 240px);
+    width: 800px;
+    height: 280px;
+    padding: 40px;
+    background-color: #222;
+    opacity: 0;
+    transition: all 0.2s;
+    border-radius: 6px;
+}
+
+#formulario::before, #formulario::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    font-weight: 700;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 6px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    content: attr(data-id)
+}
+
+#formulario::after {
+    left: 160px;
+    width: auto;
+    padding-right: 80px;
+    border-bottom-right-radius: 6px;
+    content: attr(data-nom)
+}
+
+/*********************************************/
+#formulario>input[type=range]::before,
+#formulario>input[type=range]::after,
+#formulario>div.input_text::before,
+#formulario>select::before {
+    content: attr(data-etiqueta);
+    margin: 0;
+    font-size: 14px;
+    display: block;
+    position: relative;
+    top: -4px;
+    width: 80px;
+    height: 20px;
+    color: #999;
+    line-height: 80%;
+    background-color: #222;
+}
+
+#formulario>span.etiqueta {
+    color: #999;
+}
+
+#formulario>input[type=range]::after {
+    content: attr(data-valor);
+    text-align: right;
+}
+
+
+#formulario>div.input_text::before {
+    display: inline-block;
+    border-radius: 6px;
+}
+
+
+#formulario>input[type=range]:focus,
+#formulario>button:focus,
+#formulario>div>input[type=text],
+#formulario>select {
+    outline: none;
+}
+
+#formulario>input[type=range],
+#formulario>div.input_text,
+#formulario>button {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 20px 0px;
+}
+
+#formulario>input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 7px;
+    background-color: #666;
+    cursor: pointer;
+}
+
+#formulario>button {
+    font-size: 13px;
+    min-width: 92px;
+    padding: 10px;
+    color: #999;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+#formulario>button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}

@@ -1,0 +1,69 @@
+		body {
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			color: #fff;
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+			font-size: 16px;
+			user-select: none;
+			overflow: hidden;
+		}
+		#botones {
+			display: flex;
+			flex-direction: column;
+
+		}
+		#botones > button:focus {
+			border: 0;
+			outline: 0;
+		}
+		#botones > button {
+			font-family: Consolas, Arial, Helvetica, sans-serif;
+			font-size: 1.4em;
+			border: none;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 400px;
+			height: 100px;
+			background-color: #363;
+			color: #fff;
+			border-radius: 10px 10px;
+			transition: background-color 0.5s;
+		}
+		#botones > button > span {
+			font-size: .6em;
+		}
+		#botones > button:hover {
+			background-color: #585;
+		}
+		#contenedor {
+			display: grid;
+			text-align: center;
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			transition: opacity 0.5s;
+		}
+		#contenedor > video {
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		#contenedor > img {
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		 #audio {
+			position: fixed;
+			height: 0px;
+			overflow: hidden;
+		 }

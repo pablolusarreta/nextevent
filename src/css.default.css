@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'fuente100';
+    src: url(../fuentes/segoeui100.woff);
+}
+
+@font-face {
+    font-family: 'fuente400';
+    src: url(../fuentes/segoeui700.woff);
+    font-weight: 900;
+}
+
+body {
+    font-family: fuente100, Tahoma, Geneva, Verdana;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-size: 14px;
+    user-select: none;
+    overflow: hidden;
+}
+
+button {
+    font-family: fuente400, Tahoma, Geneva, Verdana;
+    padding: 6px 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: #666;
+    color: #ccc;
+    cursor: context-menu;
+    transition: all 0.5s;
+}
+
+button:hover {
+    color: #fff;
+}
+
+input {
+    font-family: fuente100, Tahoma, Geneva, Verdana;
+    cursor: context-menu;
+}
+
+select {
+    font-family: fuente100, Tahoma, Geneva, Verdana;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+}
+
+option {
+    background-color: #404040;}

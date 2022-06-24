@@ -1,0 +1,205 @@
+nav {
+    position: fixed;
+    right: 0px;
+    width: 90px;
+    height: 100vh;
+    background-color: #191919;
+    color: #FFF;
+    overflow: hidden;
+    text-align: center;
+    /*box-shadow: 0 0 8px 4px #000;*/
+}
+
+nav>button {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 3vh auto;
+    padding: 0px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50% 50%;
+    transition: background-color 1s;
+}
+
+nav>button:hover {
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+nav>hr {
+    height: 2px;
+    margin: 20px;
+    border: none;
+    background-color: #444;
+}
+
+nav>button:nth-child(1) {
+    margin-top: 40px;
+    border-radius: 3px 3px;
+    font-size: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+
+    height: 60px;
+}
+
+nav>button:nth-child(1)>div {
+    margin-top: -5.5px;
+}
+
+nav>button:nth-child(2) {
+    height: 30px;
+    border-radius: 10px 10px;
+}
+
+nav>hr:nth-child(3), nav>hr:nth-child(8) {
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    opacity: .2;
+}
+
+nav>button:nth-child(4), nav>button:nth-child(5), nav>button:nth-child(6), nav>button:nth-child(7) {
+    width: 50px;
+    height: 50px;
+}
+
+nav>button:nth-child(4), nav>button:nth-child(7) {
+    font-size: 64px;
+}
+
+nav>button:nth-child(4)>div {
+    margin-top: -26px;
+}
+
+nav>button:nth-child(5)>div, nav>button:nth-child(6)>div {
+    width: 0px;
+    height: 0px;
+    margin-top: -8px;
+    margin-left: 11px;
+    border-bottom: 14px solid #ccc;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    opacity: 0.7;
+    transition: opacity 0.5s;
+}
+
+nav>button:nth-child(6)>div {
+    margin-top: 8px;
+    border-bottom: 0px;
+    border-top: 14px solid #ccc;
+}
+
+nav>button:nth-child(7)>div {
+    transform: rotate(45deg);
+    margin-top: -24px;
+    margin-left: 8px;
+}
+
+nav>button:nth-child(7):hover {
+    color: #900;
+}
+
+nav>button:nth-child(5)>div:hover, nav>button:nth-child(6)>div:hover {
+    opacity: 1
+}
+
+/*GO Y PAUSE*/
+
+nav>button:nth-child(9) {
+    opacity: 0.3;
+    background-color: "#363";
+}
+
+nav>button:nth-child(10) {
+    opacity: 0.3;
+    background-color: "#363";
+}
+
+nav>button:nth-child(10)>div {
+    font-size: 30px;
+    font-family: 'fuente400';
+    background-color: "#363";
+}
+
+footer {
+    position: fixed;
+    display: grid;
+    grid: 10px / calc(100% - 400px) 240px 30px 30px;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 30px;
+    background-color: #191919;
+    text-align: center;
+    box-shadow: 0 0 40px 8px rgba(0, 0, 0, 0.7);
+}
+
+footer>div:nth-child(1), #info {
+    margin-top: 8px;
+    margin-left: 40px;
+    height: 10px;
+    background-color: rgba(255, 2550, 255, 0.1);
+}
+
+#info {
+    width: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
+    background-color: rgba(255, 2550, 255, 0.5);
+    transition-timing-function: ease-in-out;
+    transition: width .3s;
+}
+
+#contador, #contador_audio, footer>div:nth-child(5) {
+    font-family: Consolas, "Courier New", "Andale Mono";
+    font-size: 16px;
+    color: #606060;
+    margin-top: 3px;
+    height: 90px;
+}
+
+
+#contador>sup, #contador_audio>sup {
+    font-size: 12px;
+}
+
+footer>div:nth-child(5) {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    width: calc(100% - 440px);
+    height: 6px;
+}
+
+#contador_audio {
+    width: 0%;
+    background-color: #005020;
+    height: 6px;
+}
+
+#flujo::before {
+    content: 'ASINC:';
+}
+
+#flujo {
+    position: absolute;
+    bottom: 8px;
+    right: 120px;
+    font-family: Consolas, "Courier New", "Andale Mono";
+    font-size: 11px;
+    background-color: #000;
+    padding: 2px 6px;
+    color: #606060;
+    margin-top: 3px;
+}
+
+#info_s {
+    position: absolute;
+    bottom: 5px;
+    right: 14px;
+    font-family: Consolas, "Courier New", "Andale Mono";
+    height: 20px;
+    border: none;
+    opacity: 0.3;
+    font-size: 13px;
+}

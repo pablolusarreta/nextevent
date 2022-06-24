@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta charset="UTF-8">
+	<meta name="description" content="Player multimedia sencillo">
+	<meta name="keywords" content="Player, audio, video, imagen, sonido">
+	<meta name="author" content="Pablo lusarreta">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>nextevent</title>
+
+	<script type="text/javascript" src="src/js.almacenamiento-local.js"></script>
+	<script type="text/javascript" src="src/js.control.js"></script>
+	<script type="text/javascript" src="src/js.formulario.js"></script>
+	<script type="text/javascript" src="src/js.pasos.js"></script>
+	<script type="text/javascript" src="src/js.ficheros.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="src/css.default.css" media="screen,print" />
+	<link rel="stylesheet" type="text/css" href="src/css.control.css" media="screen,print" />
+	<link rel="stylesheet" type="text/css" href="src/css.formulario.css" media="screen,print" />
+	<link rel="stylesheet" type="text/css" href="src/css.pasos.css" media="screen,print" />
+</head>
+
+<body>
+
+	<section id="pasos"></section>
+
+
+
+	<nav>
+		<button onclick="ventanaSalida();" id="boton_crea_v" title="Abrir ventana de salida">
+			<div>></div>
+		</button>
+		<button onclick="abre_form_config()">
+			<div></div>
+			<div></div>
+			<div></div>
+		</button>
+
+		<hr>
+
+		<button onclick=" muestra_ficheros()" id="boton_abre_form" title="Añadir elementos">
+			<div>+</div>
+		</button>
+		<button onclick="ordena_paso(-1)" id="boton_subir" title="Subir en la lista">
+			<div></div>
+		</button>
+		<button onclick="ordena_paso(1)" id="boton_bajar" title="Bajar en la lista">
+			<div></div>
+		</button>
+		<button onclick="elimina_paso()" id="boton_limpia_memoria" title="Elimina paso seleccionado">
+			<div>+</div>
+		</button>
+		<hr>
+		<button onclick="PAUSE()" id="boton_pausa">
+			<div>|&nbsp;|</div>
+		</button>
+		<button id="boton_go">
+			<div>GO</div>
+		</button>
+	</nav>
+
+	<footer>
+		<div>
+			<div id="info"></div>
+		</div>
+		<div id="contador"></div>
+		<div id="flujo">&nbsp;&nbsp;</div>
+		<div id="info_s"></div>
+		<div>
+			<div id="contador_audio"></div>
+		</div>
+	</footer>
+	<!--/////////////////////////////////////////////////////////////////////////////////////////-->
+	<div id="telon" onclick="cierra_form()"></div>
+
+
+	<section id="formulario">
+
+	</section>
+
+</body>
+
+</html>

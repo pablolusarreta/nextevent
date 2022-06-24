@@ -1,0 +1,27 @@
+{
+  "name": "nextevent",
+  "version": "6.0.2",
+  "description": "Secuenciador de ficheros multimedia simple y sincronico",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "dist": "electron-builder"
+  },
+  "author": "Pablo Lusarreta",
+  "license": "MIT",
+  "build": {
+    "appId": "1648966277974",
+    "asar": true,
+    "win": {
+      "target": "NSIS",
+      "icon": "assets/icons/win/icon.ico"
+    }
+  },
+  "dependencies": {
+    "electron-reload": "^1.4.0"
+  },
+  "devDependencies": {
+    "electron": "^7.1.7",
+    "electron-builder": "^21.2.0"
+  }
+}

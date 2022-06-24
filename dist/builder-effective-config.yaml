@@ -1,0 +1,9 @@
+directories:
+  output: dist
+  buildResources: build
+appId: '1648966277974'
+asar: true
+win:
+  target: NSIS
+  icon: assets/icons/win/icon.ico
+electronVersion: 7.1.7

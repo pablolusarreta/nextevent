@@ -1,0 +1,149 @@
+#pasos {
+    position: fixed;
+    padding-top: 30px;
+    width: calc(100vw - 92px);
+    height: calc(100vh - 30px);
+    background-color: #101010;
+    color: #999;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#pasos::-webkit-scrollbar {
+    width: 8px;
+}
+
+#pasos::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+#pasos::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+#pasos>div {
+    display: grid;
+    grid: 20px / 50px 20px 250px auto 100px 20px 60px;
+    width: calc(100vw - 200px);
+    height: 20px;
+    padding: 6px;
+    margin: 0px 30px;
+    box-shadow: none;
+    transition: background-color 0.5s, box-shadow 0.4s;
+    border-bottom: 1px solid #333;
+}
+
+#pasos>div:hover {
+    background-color: #191919;
+}
+
+#pasos>div>div {
+    padding: 0px 10px;
+    font-weight: 900;
+    font-size: 11px;
+}
+
+#pasos>div>div:nth-child(4) {
+    color: #fff;
+    padding-left: 40px;
+}
+
+#pasos>div>div:nth-child(1) {
+    padding: 0px 20px 0 5px;
+    text-align: center;
+}
+
+#pasos>div>div:nth-child(2) {
+    color: #fff;
+    padding: 0%;
+    /*text-transform: capitalize;*/
+    text-align: center;
+}
+
+#pasos>div>div.audio, #pasos>div>div.video, #pasos>div>div.img {
+    background-color: #353;
+    font-size: 13px;
+    border-radius: 10px 10px;
+}
+
+#pasos>div>div.video {
+    background-color: #533;
+}
+
+#pasos>div>div.img {
+    background-color: #335;
+}
+
+/*
+#pasos>div>div.video {
+    box-sizing: border-box;
+    background-color: #999;
+    color: #000;
+    border-left: 6px solid #000;
+    border-right: 6px solid #000;
+    font-weight: 900;
+    font-size: 18px;
+    transform: rotate(270deg);
+}
+
+#pasos>div>div.img {
+    letter-spacing: -6px;
+    overflow: hidden;
+    box-shadow: 0px -6px #666 inset;
+    background-color: #fff;
+    color: #666;
+}*/
+
+#pasos>div>div:nth-child(3), #pasos>div>div:nth-child(4) {
+    text-align: left;
+    overflow: hidden;
+
+}
+
+#pasos>div>div:nth-child(5) {
+    position: relative;
+    top: 8px;
+    padding: 0px;
+    height: 4px;
+    background-color: #191919;
+    color: #000;
+}
+
+#pasos>div>div:nth-child(5)>div {
+    height: 4px;
+    background-color: #414141;
+}
+
+#pasos>div>div:nth-child(6) {
+    font-size: 16px;
+    opacity: 0.2;
+    color: #fff;
+}
+
+/* BOTON MENU *****************************************/
+#pasos>div>div:nth-child(7) {
+    text-align: right;
+}
+
+#pasos>div>div:nth-child(7)>button {
+    padding: 0px 4px;
+    width: 40px;
+    height: 20px;
+    border-radius: 4px 4px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#pasos>div>div:nth-child(7)>button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#pasos>div>div:nth-child(7)>button>div, nav>button:nth-child(2)>div {
+    display: inline-block;
+    margin: 2px;
+    margin-bottom: 4px;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px 2px;
+}
