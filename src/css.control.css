@@ -170,7 +170,14 @@ footer>div:nth-child(5) {
     width: calc(100% - 440px);
     height: 6px;
 }
-
+footer>div:nth-child(6) {
+    position: absolute;
+    bottom: 1px;
+    right: 10px;
+    font-size: 8px;
+    font-weight: 100;
+    opacity: 0.2;
+}
 #contador_audio {
     width: 0%;
     background-color: #005020;
