@@ -170,7 +170,7 @@ window.onload = () => {
     document.getElementById("quedan").innerHTML = `<div>La lincencia expira el Jueves, 1 de Septiembre de 2022, quedan:<br>${quedan(diferencia)}</div>`
     if (ahora.getTime() < 1661983200000) {
         setTimeout(()=>{
-            document.getElementById("quedan").innerHTML =''
+            document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"));
             arranca()
         } , 5000)       
     }
