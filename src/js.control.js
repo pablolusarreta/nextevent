@@ -139,6 +139,19 @@ function PAUSE() {
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //enter:13,space:32,->:39,0:96
+const arranca = () => {
+    carga_datos()
+    carga_config()
+    crea_lista_pasos()
+    select_paso(id_select)
+}
+const quedan = t=>{
+    t = Math.abs(t)
+    let dias = Math.floor(t/86400000 )
+    let horas = Math.floor((t%86400000)/3600000)
+    let minutos = Math.floor(((t%86400000)%3600000)/60000)
+    return `${dias} Dias, ${horas} Horas y ${minutos} minutos.`
+}
 window.onload = () => {
     BV = document.getElementById("boton_crea_v")
     BG = document.getElementById("boton_go")
@@ -151,10 +164,16 @@ window.onload = () => {
     CD = document.getElementById("contador")
     CDA = document.getElementById("contador_audio")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
-    carga_datos()
-    carga_config()
-    crea_lista_pasos()
-    select_paso(id_select)
+    //Jueves, 1 de Septiembre de 2022 fin prueva
+    let ahora = new Date()
+    let diferencia = ahora.getTime() - 1661983200000
+    document.getElementById("quedan").innerHTML = `<div>La lincencia expira el Jueves, 1 de Septiembre de 2022, quedan:<br>${quedan(diferencia)}</div>`
+    if (ahora.getTime() < 1661983200000) {
+        setTimeout(()=>{
+            document.getElementById("quedan").innerHTML =''
+            arranca()
+        } , 5000)       
+    }
 }
 window.onbeforeunload = () => {
     index.cierra_salida()

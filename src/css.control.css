@@ -170,6 +170,7 @@ footer>div:nth-child(5) {
     width: calc(100% - 440px);
     height: 6px;
 }
+
 footer>div:nth-child(6) {
     position: absolute;
     bottom: 1px;
@@ -178,6 +179,7 @@ footer>div:nth-child(6) {
     font-weight: 100;
     opacity: 0.2;
 }
+
 #contador_audio {
     width: 0%;
     background-color: #005020;
@@ -209,4 +211,22 @@ footer>div:nth-child(6) {
     border: none;
     opacity: 0.3;
     font-size: 13px;
+}
+
+#quedan {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#quedan>div {
+    width: 800px;
+    padding: 20px 40px;
+    text-align: center;
+    background-color: #000;
+    font-size: 24px;
+    border-radius: 10px;
 }
