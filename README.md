@@ -1,5 +1,5 @@
 ## nextevent  
-Reproductor de secuencias multimedia. Aplicación de escritorio creada con <span style="color:#36c">ELECTRON</span> para  Windows. 
+Aplicación de escritorio creada con  [![N|Solid](https://pablolusarreta.github.io/relog/media/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 
 
 ## Especificaciones:
@@ -33,5 +33,5 @@ Se pueden elegir dos modos de funcionamiento:
     Si se esta reproduciendo una imagen y el siguiente paso es un audio la imagen quedara en la salida mientras el sonido se reproduce, y no desaparecerá hasta que el siguiente paso sea una imagen o un video.
     De igual manera el audio sonara asta terminar o hasta que el siguiente paso sea otro audio.
 
-* Si lo que se quiere hacer es terminar antes de tiempo un paso se pueden usar ficheros vacíos. 
+ _ _ Si lo que se quiere hacer es terminar antes de tiempo un paso se pueden usar ficheros vacíos. 
 
