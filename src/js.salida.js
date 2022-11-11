@@ -1,20 +1,26 @@
 const index = require('electron').remote.require('./index')
-var salida, config, ES, PA, Ptmp //Elemento Seleccionado,  Paso Actual
-
+let salida, config, ES, PA, motor_audio //Elemento Seleccionado,  Paso Actual
+PA = false
 require('electron').ipcRenderer.on('GO', (e, ob) => {
-    console.log(ob)
     config = JSON.parse(localStorage.getItem('NEXTEVENTSIMPLECONFIG'))
-    Ptmp = PA
+    if (PA.tipo == 'audio') {
+        console.log('Paso anterior' + PA)
+        console.log(PA)
+        let ele = document.getElementById('audio' + PA.id)
+        //fade_audio_out(ele)
+    }
+    //------------------------------
     PA = ob
+    console.log('Paso Actual' + PA)
+    console.log(PA)
     if (PA.tipo != 'audio') {
         salida.style.transition = 'opacity ' + config.fade + 's'
         salida.style.opacity = "0"
     }
     let miliseg = (PA.tipo == 'audio') ? 0 : (Number(config.fade) * 1000)
-
     setTimeout(() => {
         if (config.flujo == 1) {
-            if (PA.tipo == 'audio' ) {
+            if (PA.tipo == 'audio') {
                 salida_audio.innerHTML = ''
             } else {
                 salida.innerHTML = ''
@@ -22,6 +28,7 @@ require('electron').ipcRenderer.on('GO', (e, ob) => {
         } else {
             salida.innerHTML = salida_audio.innerHTML = ''
         }
+        //if (PA.tipo == 'audio') { clearInterval(motor_audio) }
         eval('carga_' + PA.tipo + '()')
     }, miliseg)
 })
@@ -34,10 +41,19 @@ require('electron').ipcRenderer.on('play:salida', (e) => {
 })
 
 
-var fade_in = () => { salida.style.opacity = "1" }
-var asigna_eventos = (ob) => {
+const fade_in = () => { salida.style.opacity = "1" }
+const fade_audio_out = ele => {
+    let vol = ele.volume
+    motor_audio = setInterval(() => {
+        vol -= Number(config.fade) / 100
+        vol = (vol < 0) ? 0 : vol
+        ele.volume = vol
+    }, 100)
+}
+
+const asigna_eventos = (ob) => {
     ob.addEventListener("timeupdate", (e) => {
-        index.reproduccion(ob.currentTime, ob.duration,  ob.firstChild.src)
+        index.reproduccion(ob.currentTime, ob.duration, ob.firstChild.src)
         //console.log(document.getElementById('contenedor').firstChild.firstChild.getAttribute('src'),ob.currentTime,' | ',ob.duration)
         if (PA.fin == 1) {
             ob.loop = true
@@ -62,7 +78,7 @@ var asigna_eventos = (ob) => {
     }, true);
 }
 
-var carga_video = () => {
+const carga_video = () => {
     var el = document.createElement('video')
     el.onloadstart = fade_in
     asigna_eventos(el)
@@ -73,9 +89,10 @@ var carga_video = () => {
     ES = salida.appendChild(el)
 }
 
-var carga_audio = () => {
+const carga_audio = () => {
     var el = document.createElement('audio')
     el.controls = false
+    el.id = 'audio' + PA.id
     var el2 = document.createElement("source")
     el2.src = PA.ruta
     el2.type = PA.mime
@@ -84,7 +101,7 @@ var carga_audio = () => {
     asigna_eventos(el)
 }
 
-var carga_img = () => {
+const carga_img = () => {
     var el = document.createElement('img')
     el.src = PA.ruta
     el.type = PA.mime
@@ -92,10 +109,10 @@ var carga_img = () => {
     ES = salida.appendChild(el)
 }
 //////////////////////////////////////////////////////////////////////////
-var info_salida = () => {
+const info_salida = () => {
     index.info_salida([window.innerWidth, window.innerHeight])
 }
-var maximiza = () => {
+const maximiza = () => {
     window.ondblclick = () => {
         document.webkitExitFullscreen()
         location.reload()
@@ -106,7 +123,7 @@ var maximiza = () => {
     info_salida()
 
 }
-var minimiza = () => {
+const minimiza = () => {
     let context = new AudioContext()
     info_salida()
     index.mimimiza_salida()

@@ -39,7 +39,7 @@ exports.info_salida = d => {
 	vcontrol.webContents.send('info_salida', d)
 }
 exports.reproduccion = (t, d, s) => {
-	vcontrol.webContents.send('reproduccion', { t: t, d: d, s: s})
+	vcontrol.webContents.send('reproduccion', { t: t, d: d, s: s })
 }
 //////////////////////////////////////////////////////////////////////////////
 const creaVentana = f => {
@@ -70,7 +70,7 @@ const creaVentana = f => {
 		slashes: true
 	}));
 	ventana.setMenu(null)
-	//ventana.webContents.openDevTools()
+	ventana.webContents.openDevTools()
 	return ventana
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -88,9 +88,9 @@ app.on('activate', () => {
 		vcontrol = creaVentana('control.htm')
 	}
 });
-/*if (process.env.NODE_ENV !== 'production') {
+/**/if (process.env.NODE_ENV !== 'production') {
 	require('electron-reload')(__dirname, {
 		electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
 	});
-};*/
+};
 ipcMain.on('herramientas', () => { vcontrol.webContents.openDevTools(); })

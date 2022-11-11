@@ -112,15 +112,14 @@ ipcRenderer.on('GOGO', (e) => {
     GO()
 })
 
-function ventanaSalida() {
+const ventanaSalida = () => {
     index.ventanaSalida('salida.htm')
 }
 let goact = false
-function GO() {
+const GO = () => {
     CD.innerHTML = ''; IF.style.width = CDA.style.width = '0%'
     if (goact == false) {
-        goact = true
-        PAtmp = PA
+        goact = true; PAtmp = PA
         setTimeout(() => goact = false, Number(config.fade) * 1000 + 100);
         if (PA.tipo == 'img') { if (pausado) { clearInterval(motor_pausado) } }
         paso_activo(pasos[id_select].IDU)
@@ -131,7 +130,7 @@ function GO() {
         select_paso(sig)
     }
 }
-function PAUSE() {
+const PAUSE = () => {
     if (P != undefined) {
         if (P.tipo == 'img') { return false }
         if (pausado) { index.PLAY() } else { index.PAUSE() }
@@ -145,11 +144,11 @@ const arranca = () => {
     crea_lista_pasos()
     select_paso(id_select)
 }
-const quedan = t=>{
+const quedan = t => {
     t = Math.abs(t)
-    let dias = Math.floor(t/86400000 )
-    let horas = Math.floor((t%86400000)/3600000)
-    let minutos = Math.floor(((t%86400000)%3600000)/60000)
+    let dias = Math.floor(t / 86400000)
+    let horas = Math.floor((t % 86400000) / 3600000)
+    let minutos = Math.floor(((t % 86400000) % 3600000) / 60000)
     return `${dias} Dias, ${horas} Horas y ${minutos} minutos.`
 }
 window.onload = () => {
@@ -169,10 +168,10 @@ window.onload = () => {
     let diferencia = ahora.getTime() - 1661983200000
     document.getElementById("quedan").innerHTML = `<div>La lincencia expira el Jueves, 1 de Septiembre de 2022, quedan:<br>${quedan(diferencia)}</div>`
     if (ahora.getTime() < 1661983200000) {
-        setTimeout(()=>{
+        setTimeout(() => {
             document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"));
             arranca()
-        } , 5000)       
+        }, 5000)
     }
 }
 window.onbeforeunload = () => {
