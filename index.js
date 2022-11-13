@@ -70,7 +70,7 @@ const creaVentana = f => {
 		slashes: true
 	}));
 	ventana.setMenu(null)
-	ventana.webContents.openDevTools()
+	//ventana.webContents.openDevTools()
 	return ventana
 }
 //////////////////////////////////////////////////////////////////////////////

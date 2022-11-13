@@ -164,10 +164,11 @@ window.onload = () => {
     CDA = document.getElementById("contador_audio")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
     //Jueves, 1 de Septiembre de 2022 fin prueva
-    let ahora = new Date()
-    let diferencia = ahora.getTime() - 1661983200000
-    document.getElementById("quedan").innerHTML = `<div>La lincencia expira el Jueves, 1 de Septiembre de 2022, quedan:<br>${quedan(diferencia)}</div>`
-    if (ahora.getTime() < 1661983200000) {
+    let duracion = 1680000000000
+    let ahora = new Date().getTime()
+    let diferencia = ahora - duracion
+    document.getElementById("quedan").innerHTML = `<div>La prueva termina:<br>${quedan(diferencia)}</div>`
+    if (ahora < duracion) {
         setTimeout(() => {
             document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"));
             arranca()

@@ -1,7 +1,7 @@
 {
   "name": "nextevent",
-  "version": "6.0.2",
-  "description": "Secuenciador de ficheros multimedia simple y sincronico",
+  "version": "7.0.0",
+  "description": "Secuenciador de ficheros multimedia simple y semisincronico",
   "main": "index.js",
   "scripts": {
     "start": "electron index.js",
