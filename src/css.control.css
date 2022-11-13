@@ -222,11 +222,22 @@ footer>div:nth-child(6) {
     justify-content: center;
 }
 
-#quedan>div {
+#quedan>div:nth-child(1) {
+    position: absolute;
     width: 800px;
     padding: 20px 40px;
     text-align: center;
     background-color: #000;
     font-size: 24px;
     border-radius: 10px;
+}
+
+#contador_prueba {
+    position: absolute;
+    margin-top: 50px;
+    width: 0px;
+    height: 2px;
+    background-color: #005020;
+    border-radius: 1px;
+    transition: width 4s;
 }

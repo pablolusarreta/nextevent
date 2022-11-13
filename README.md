@@ -1,4 +1,4 @@
-## nextevent  
+# next event
 Aplicación de escritorio creada con  [![N|Solid](https://pablolusarreta.github.io/relog/media-nextevent/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 
 ### Instalacion:

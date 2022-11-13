@@ -160,17 +160,23 @@ window.onload = () => {
     TL = document.getElementById("telon")
     FA = document.getElementById("formulario")
     IF = document.getElementById("info")
-    CD = document.getElementById("contador")
     CDA = document.getElementById("contador_audio")
+    CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
     //Jueves, 1 de Septiembre de 2022 fin prueva
     let duracion = 1680000000000
     let ahora = new Date().getTime()
     let diferencia = ahora - duracion
-    document.getElementById("quedan").innerHTML = `<div>La prueva termina:<br>${quedan(diferencia)}</div>`
+    let s = `<div>La prueba termina:<br>${quedan(diferencia)}</div>`
+    s +=`<div id="contador_prueba"></div>`
+    document.getElementById("quedan").innerHTML = s
+    setTimeout(() => {
+        document.getElementById("contador_prueba").style.width = '872px'
+    }, 1000)
+    
     if (ahora < duracion) {
         setTimeout(() => {
-            document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"));
+            document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
             arranca()
         }, 5000)
     }
