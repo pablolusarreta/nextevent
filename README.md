@@ -1,19 +1,19 @@
-## nextevent
+# nextevent
 
 Aplicación de escritorio creada con  [![N|Solid](https://pablolusarreta.github.io/relog/media-nextevent/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 commit
 ### Instalación:
-    1 Descargar el .zip en la pestaña [ Code ] , pone Download ZIP.
+    1 Descargar el .zip en la pestaña ` Code ` , pone Download ZIP.
     2 Descomprimir.
-    3 Ejecutar de la carpeta dist/ "nextevent Setup 7.0.7.exe".
+    3 Ejecutar de la carpeta `dist/` `nextevent Setup 7.0.7.exe`.
 
-    *si no quereis instalarlo ejecútalo directamente en:
+    * Si no quereis instalarlo ejecútalo directamente en:
 
-    dist/win-unpacked/nextevent.exe
+    `dist/win-unpacked/nextevent.exe`
 ### Especificaciones:
     Puede reproducir cualquier fichero multimedia soportado por HTML5.
     Control de volumen de cada paso.
-    Control acción cuando acaba un paso  [ stop | siguiente | bucle ].
+    Control acción cuando acaba un paso stop, siguiente o bucle.
     Control general tiempo de desvanecimiento de los ficheros de imagen/video [ 0s > 10s ].
     Dos modos de sincronía.
     Guardado de proyectos en formato JSON. 
@@ -23,12 +23,12 @@ commit
 ### Funcionamiento:
 #### Para  reproducir audio, video e imágenes: 
     Ponemos el PC en modo pantalla extendida.
-    Hacemos click en el botón [>] para abrir la ventana de salida.
-    Arrastramos la ventana el escritorio extendido y hacemos click en "Maximizar ventana".
+    Hacemos click en el botón `[>]` para abrir la ventana de salida.
+    Arrastramos la ventana el escritorio extendido y hacemos click en ` Maximizar ventana `.
 
 #### Para reproducir solo audio:
-    Hacemos click en el botón [>] para abrir la ventana de salida.
-    Hacemos click en "Minimizar ventana".
+    Hacemos click en el botón `[>]` para abrir la ventana de salida.
+    Hacemos click en ` Minimizar ventana `.
 
 
 ### Modos SINC:
