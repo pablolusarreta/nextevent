@@ -11,7 +11,19 @@ const abre_form = () => {
 const dimensiones_img = (id) => {
     //console.log(id)
 }
-var form_edit, config_tmp
+let form_edit, config_tmp
+let mime = {
+    'mp4': 'video/mp4',
+    'webm': 'video/webm',
+    'ogg': 'video/ogg',
+    'wav': 'audio/wav',
+    'mp3': 'audio/mpeg',
+    'oga': 'audio/ogg',
+    'jpg': 'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'gif': 'image/gif',
+    'png': 'image/png'
+}
 //////////////////////////////////////////////////////////////////
 const abre_form_paso = (id) => {
     PA = PAtmp = pasos[id];

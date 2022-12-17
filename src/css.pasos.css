@@ -44,10 +44,7 @@
     font-size: 11px;
 }
 
-#pasos>div>div:nth-child(4) {
-    color: #fff;
-    padding-left: 40px;
-}
+
 
 #pasos>div>div:nth-child(1) {
     padding: 0px 20px 0 5px;
@@ -59,6 +56,16 @@
     padding: 0%;
     /*text-transform: capitalize;*/
     text-align: center;
+}
+#pasos>div>div:nth-child(3), #pasos>div>div:nth-child(4) {
+    text-align: left;
+    overflow: hidden;
+    height: 18px;
+}
+
+#pasos>div>div:nth-child(4) {
+    color: #fff;
+    padding-left: 40px;
 }
 
 #pasos>div>div.audio, #pasos>div>div.video, #pasos>div>div.img {
@@ -94,12 +101,6 @@
     background-color: #fff;
     color: #666;
 }*/
-
-#pasos>div>div:nth-child(3), #pasos>div>div:nth-child(4) {
-    text-align: left;
-    overflow: hidden;
-
-}
 
 #pasos>div>div:nth-child(5) {
     position: relative;

@@ -114,23 +114,23 @@ function crea_lista_pasos() {
     console.log(pasos)
     //var simb = ['◻', '↺', '▷']
     //var tips = { img: '⛰▲', audio: '♫', video: '..' }
-    var simb = ['◻', '↺', '▷']
-    var tips = { img: 'I', audio: 'A', video: 'V' }
-    var S = ""
+    let simb = ['◻', '↺', '▷']
+    let tips = { img: 'I', audio: 'A', video: 'V' }
+   let id, alerta, v, s, S = ""
     if (pasos.length > 0) {
         for (var i in pasos) {
-            var id = pasos[i].id
-            var alerta = (existe(pasos[i].ruta) == false) ? ' style="color:#c99"' : ''
-            S += "<div id='" + id + "' onclick='select_paso(" + id + ")'>"
-            S += "<div>" + i + "</div><div class='" + pasos[i].tipo + "'>" + tips[pasos[i].tipo] + "</div>"
-            var v = pasos[i].vol
-            var s = (v == "0") ? " style='background-color:transparent'" : ""
-            S += "<div title='" + pasos[i].ruta.replace('\\', '/') + "' " + alerta + ">" + pasos[i].nom + "</div>"
-            S += "<div>" + pasos[i].text + "</div>"
-           // S += "<div>" + pasos[i].IDU + "</div>"
-            S += "<div" + s + "><div style='width:" + v + "px'></div></div>"
-            S += "<div>" + ((pasos[i].tipo != 'img') ? simb[pasos[i].fin] : '') + "</div>"
-            S += "<div><button onclick='abre_form_paso(" + id + ")'><div></div><div></div><div></div></button></div>"
+            id = pasos[i].id
+            alerta = (existe(pasos[i].ruta) == false) ? ' style="color:#c99"' : ''
+            S += `<div id='${id}' onclick='select_paso(${id})'>`
+            S += `<div>${i}</div><div class='${pasos[i].tipo}'>${tips[pasos[i].tipo]}</div>`
+            v = pasos[i].vol
+            s = (v == "0") ? " style='background-color:transparent'" : ""
+            S += `<div title='${pasos[i].ruta.replace('\\', '/')}'${alerta}>${pasos[i].nom}</div>`
+            S += `<div title='${pasos[i].text}'>${pasos[i].text.replace('<', ' ')}</div>`
+            // S += "<div>" + pasos[i].IDU + "</div>"
+            S += `<div${s}><div style='width:${v}px'></div></div>`
+            S += `<div>${((pasos[i].tipo != 'img') ? simb[pasos[i].fin] : '')}</div>`
+            S += `<div><button onclick='abre_form_paso(${id})'><div></div><div></div><div></div></button></div>`
             S += "</div>"
         }
     }

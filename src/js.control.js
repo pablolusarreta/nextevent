@@ -5,14 +5,22 @@ const url = require('url')
 const fs = require('fs')
 const index = require('electron').remote.require('./index')
 
+let BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado
+let pausado = false
+let ext = {
+    video: ['mp4', 'webm', 'ogg'],
+    audio: ['wav', 'mp3', 'oga'],
+    img: ['jpg', 'jpeg', 'gif', 'png']
+}
+
 const muestra_ficheros = () => {
     dialog.showOpenDialog({
         properties: ['openFile', 'multiSelections'],
         filters: [
-            { name: 'Multimedia', extensions: ['mp3', 'wav', 'oga', 'mp4', 'ogg', 'webm', 'jpg', 'jpeg', 'gif', 'png'] },
-            { name: 'Video', extensions: ['mp4', 'webm', 'ogg'] },
-            { name: 'Audio', extensions: ['mp3', 'wav', 'oga'] },
-            { name: 'Imagen', extensions: ['jpg', 'jpeg', 'gif', 'png'] },
+            { name: 'Multimedia', extensions: ext.video.concat(ext.audio, ext.img) },
+            { name: 'Video', extensions: ext.video },
+            { name: 'Audio', extensions: ext.audio },
+            { name: 'Imagen', extensions: ext.img },
             { name: 'Todos los ficheros', extensions: ['*'] }
         ]
     }).then(res => {
@@ -31,25 +39,7 @@ const muestra_ficheros = () => {
         console.log(err)
     })
 }
-var BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado
-var pausado = false
-var ext = {
-    video: ['mp4', 'webm', 'ogg'],
-    audio: ['wav', 'mp3', 'oga'],
-    img: ['jpg', 'jpeg', 'gif', 'png']
-}
-var mime = {
-    'mp4': 'video/mp4',
-    'webm': 'video/webm',
-    'ogg': 'video/ogg',
-    'wav': 'audio/wav',
-    'mp3': 'audio/mpeg',
-    'oga': 'audio/ogg',
-    'jpg': 'image/jpeg',
-    'jpeg': 'image/jpeg',
-    'gif': 'image/gif',
-    'png': 'image/png'
-}
+
 
 ipcRenderer.on('boton_go_pause', (e, m) => {
     if (pausado) { clearInterval(motor_pausado) }
@@ -95,7 +85,6 @@ ipcRenderer.on('reproduccion', (e, m) => {
             CDA.width = '0%';
         }
     }
-
 })
 ipcRenderer.on('pause:control', (e) => {
     pausado = true
@@ -168,12 +157,12 @@ window.onload = () => {
     let ahora = new Date().getTime()
     let diferencia = ahora - duracion
     let s = `<div>La prueba termina:<br>${quedan(diferencia)}</div>`
-    s +=`<div id="contador_prueba"></div>`
+    s += `<div id="contador_prueba"></div>`
     document.getElementById("quedan").innerHTML = s
     setTimeout(() => {
         document.getElementById("contador_prueba").style.width = '872px'
     }, 1000)
-    
+
     if (ahora < duracion) {
         setTimeout(() => {
             document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
