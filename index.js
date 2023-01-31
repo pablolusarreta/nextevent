@@ -93,4 +93,4 @@ app.on('activate', () => {
 		electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
 	});
 };
-ipcMain.on('herramientas', () => { vcontrol.webContents.openDevTools(); })
+ipcMain.on('herramientas', () => { vcontrol.webContents.openDevTools() })
