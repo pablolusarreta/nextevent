@@ -4,7 +4,7 @@ const url = require('url')
 let vcontrol, vsalida
 // F U N C I O N E S   R E M O T A S
 exports.ventanaSalida = f => {
-	vsalida = creaVentana(f)
+	vsalida = creaVentana(f, [800, 600, 700, 500])
 	vsalida.webContents.on('did-finish-load', () => {
 		vcontrol.webContents.send('boton_go_pause', { op: '1', f: 'GO', fp: 'PAUSE' })
 		vcontrol.webContents.send('boton_out', { op: '0.3', f: 'null' })
@@ -42,41 +42,30 @@ exports.reproduccion = (t, d, s) => {
 	vcontrol.webContents.send('reproduccion', { t: t, d: d, s: s })
 }
 //////////////////////////////////////////////////////////////////////////////
-const creaVentana = f => {
-	if (f == "salida.htm") {
-		var ventana = new BrowserWindow({
-			minWidth: 220,
-			minHeight: 220,
-			backgroundColor: '#000',
-			show: true,
-			icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
-			webPreferences: { nodeIntegration: true }
-		})
-	} else {
-		var ventana = new BrowserWindow({
-			width: 1240,
-			height: 800,
-			minWidth: 800,
-			minHeight: 750,
-			backgroundColor: '#000',
-			show: true,
-			icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
-			webPreferences: { nodeIntegration: true }
-		})
-	}
+const creaVentana = (f, d) => {
+	var ventana = new BrowserWindow({
+		width: d[0],
+		height: d[1],
+		minWidth: d[2],
+		minHeight: d[3],
+		backgroundColor: '#000',
+		show: true,
+		icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
+		webPreferences: { nodeIntegration: true }
+	})
+
 	ventana.loadURL(url.format({
 		pathname: path.join(__dirname, f),
 		protocol: 'file',
 		slashes: true
-	}));
+	}))
 	ventana.setMenu(null)
-	//ventana.webContents.openDevTools()
 	return ventana
 }
 //////////////////////////////////////////////////////////////////////////////
 
 app.on('ready', () => {
-	vcontrol = creaVentana('control.htm')
+	vcontrol = creaVentana('control.htm', [1240, 800, 800, 750])
 });
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
@@ -85,12 +74,12 @@ app.on('window-all-closed', () => {
 });
 app.on('activate', () => {
 	if (vcontrol === null) {
-		vcontrol = creaVentana('control.htm')
+		vcontrol = creaVentana('control.htm', [1240, 800, 800, 750])
 	}
 });
-/**/if (process.env.NODE_ENV !== 'production') {
+/*if (process.env.NODE_ENV !== 'production') {
 	require('electron-reload')(__dirname, {
 		electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
 	});
-};
+}*/
 ipcMain.on('herramientas', () => { vcontrol.webContents.openDevTools() })
