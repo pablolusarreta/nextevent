@@ -152,6 +152,12 @@ window.onload = () => {
     CDA = document.getElementById("contador_audio")
     CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
+    //prueva()
+    document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
+    arranca()
+    ventanaSalida()
+}
+const prueva = () => {
     //Jueves, 1 de Septiembre de 2022 fin prueva
     let duracion = 1680000000000
     let ahora = new Date().getTime()

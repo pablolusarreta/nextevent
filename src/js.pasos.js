@@ -1,5 +1,7 @@
-var id_select = 0;
-var idu_activo;
+const altPaso = 32
+var id_select = 0
+var idu_activo
+
 function detecta_tipo(nom) {
     var ex = nom.split('.')
     ex = ex[(ex.length - 1)].toLowerCase()
@@ -25,6 +27,7 @@ function paso_activo(IDU) {
     for (var i in pasos) {
         if (IDU == pasos[i].IDU) {
             document.getElementById(pasos[i].id).style.backgroundColor = "#363"
+            PS.scrollTo(0, (altPaso * i))
         } else {
             document.getElementById(pasos[i].id).style.backgroundColor = ""
         }
@@ -116,7 +119,7 @@ function crea_lista_pasos() {
     //var tips = { img: '⛰▲', audio: '♫', video: '..' }
     let simb = ['◻', '↺', '▷']
     let tips = { img: 'I', audio: 'A', video: 'V' }
-   let id, alerta, v, s, S = ""
+    let id, alerta, v, s, S = ""
     if (pasos.length > 0) {
         for (var i in pasos) {
             id = pasos[i].id
@@ -131,10 +134,15 @@ function crea_lista_pasos() {
             S += `<div${s}><div style='width:${v}px'></div></div>`
             S += `<div>${((pasos[i].tipo != 'img') ? simb[pasos[i].fin] : '')}</div>`
             S += `<div><button onclick='abre_form_paso(${id})'><div></div><div></div><div></div></button></div>`
-            S += "</div>"
+            S += `</div>`
         }
     }
-    PS.innerHTML = S
+    PS.innerHTML = `${S}<div id="relleno"></div>`
+    altRelleno()
     select_paso(id_select)
     paso_activo(idu_activo)
 }
+const altRelleno = () => {
+    document.getElementById('relleno').style.height = `${window.innerHeight}px`
+}
+window.onresize = altRelleno
