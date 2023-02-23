@@ -152,16 +152,16 @@ window.onload = () => {
     CDA = document.getElementById("contador_audio")
     CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
-    //prueva()
-    document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
+    prueva()
+   /* document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
     arranca()
-    ventanaSalida()
+    ventanaSalida()*/
 }
 const prueva = () => {
-    //Jueves, 1 de Septiembre de 2022 fin prueva
-    let duracion = 1680000000000
+    // final 31 12 2023
+    let final = 1703977200000
     let ahora = new Date().getTime()
-    let diferencia = ahora - duracion
+    let diferencia = ahora - final
     let s = `<div>La prueba termina:<br>${quedan(diferencia)}</div>`
     s += `<div id="contador_prueba"></div>`
     document.getElementById("quedan").innerHTML = s
@@ -169,7 +169,7 @@ const prueva = () => {
         document.getElementById("contador_prueba").style.width = '872px'
     }, 1000)
 
-    if (ahora < duracion) {
+    if (ahora < final) {
         setTimeout(() => {
             document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
             arranca()
