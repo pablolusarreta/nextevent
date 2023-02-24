@@ -153,7 +153,7 @@ window.onload = () => {
     CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
     prueva()
-   /* document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
+    /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
     arranca()
     ventanaSalida()*/
 }

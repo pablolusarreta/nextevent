@@ -1,4 +1,4 @@
-const altPaso = 32
+const altPaso = 33
 var id_select = 0
 var idu_activo
 

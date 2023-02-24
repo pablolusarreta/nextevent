@@ -14,7 +14,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #fff;
     font-size: 14px;
     user-select: none;
     overflow: hidden;
@@ -49,4 +49,12 @@ select {
 }
 
 option {
-    background-color: #404040;}
+    background-color: #404040;
+}
+#marcaActual{
+    position: fixed;
+    top:30px;
+    width: calc(100vw - 102px);
+    height: 33px;
+    background-color: #222;
+}
