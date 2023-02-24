@@ -3,8 +3,8 @@
     padding-top: 30px;
     width: calc(100vw - 92px);
     height: calc(100vh - 30px);
-    background-color: rgba(0, 0, 0, 0.95);
-    color: #999;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
     overflow-y: auto;
     overflow-x: hidden;
 }

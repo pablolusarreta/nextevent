@@ -51,10 +51,11 @@ select {
 option {
     background-color: #404040;
 }
+
 #marcaActual{
     position: fixed;
     top:30px;
     width: calc(100vw - 102px);
     height: 33px;
-    background-color: #222;
+    background-color: #000;
 }
