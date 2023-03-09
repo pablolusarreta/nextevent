@@ -1,6 +1,6 @@
 # nextevent
 
-Aplicación de escritorio creada con  [![N|Solid](https://pablolusarreta.github.io/relog/media-nextevent/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
+Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 commit
 ## Instalación:
 * Descargar el .zip en la pestaña `Code v`  `Download ZIP`.
@@ -47,17 +47,17 @@ De igual manera el audio sonara asta terminar o hasta que el siguiente paso sea 
 
 ***
 ## Pantalla de control:
-![](https://pablolusarreta.github.io/relog/media-nextevent/ControlPrincipal.png)
+![](src/img/ControlPrincipal.png)
 ***
 ## Pantalla de salida:
-![](https://pablolusarreta.github.io/relog/media-nextevent/Salida.png)
+![](src/img/Salida.png)
 ***
 ## Menu configuración Global:
-![](https://pablolusarreta.github.io/relog/media-nextevent/ConfiguracionGlobal.png)
+![](src/img/ConfiguracionGlobal.png)
 ***
 ## Menu configuración de un paso de imagen:
-![](https://pablolusarreta.github.io/relog/media-nextevent/ConfiguracionPasoImg.png)
+![](src/img/ConfiguracionPasoImg.png)
 ***
 ## Menu configuración de un paso de audio o video:
-![](https://pablolusarreta.github.io/relog/media-nextevent/ConfiguracionPasoAudioVideo.png)
+![](src/img/ConfiguracionPasoAudioVideo.png)
 ***
