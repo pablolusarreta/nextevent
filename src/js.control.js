@@ -158,8 +158,8 @@ window.onload = () => {
     ventanaSalida()*/
 }
 const prueva = () => {
-    // final 31 12 2023
-    let final = 1703977200000
+    // final Miercoles, 1 de Enero de 2025
+    let final = 1735686000000
     let ahora = new Date().getTime()
     let diferencia = ahora - final
     let s = `<div>La prueba termina:<br>${quedan(diferencia)}</div>`
