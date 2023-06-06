@@ -162,8 +162,8 @@ const prueva = () => {
     let final = 1735686000000
     let ahora = new Date().getTime()
     let diferencia = ahora - final
-    let s = `<div>La prueba termina:<br>${quedan(diferencia)}</div>`
-    s += `<div id="contador_prueba"></div>`
+    let s = `<div>La prueba termina el ${new Date(final).toLocaleDateString('es-ES')}<br>
+            ${quedan(diferencia)}</div><div id="contador_prueba"></div>`
     document.getElementById("quedan").innerHTML = s
     setTimeout(() => {
         document.getElementById("contador_prueba").style.width = '872px'

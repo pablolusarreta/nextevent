@@ -1,8 +1,8 @@
 version: 7.0.0
 files:
   - url: nextevent-Setup-7.0.0.exe
-    sha512: lcbkjf1e0Q4wAQDEfnl+4zJa9ASCXaUxMcP9F/A+Bl4Ygxpnq2gYN56ORMiNtUYIoEaq8AUuitS6ptafkM4Vyg==
-    size: 45977669
+    sha512: dHpIyN3j9oDJstutQ9vQzP9lLVVO1qHd4i5cMoUhskyHUb2ChwYWe7SYXwgWOCTSIfdu2/4u5B14jbB2UCodNA==
+    size: 46114709
 path: nextevent-Setup-7.0.0.exe
-sha512: lcbkjf1e0Q4wAQDEfnl+4zJa9ASCXaUxMcP9F/A+Bl4Ygxpnq2gYN56ORMiNtUYIoEaq8AUuitS6ptafkM4Vyg==
-releaseDate: '2023-02-24T12:33:24.265Z'
+sha512: dHpIyN3j9oDJstutQ9vQzP9lLVVO1qHd4i5cMoUhskyHUb2ChwYWe7SYXwgWOCTSIfdu2/4u5B14jbB2UCodNA==
+releaseDate: '2023-06-06T06:23:00.995Z'
