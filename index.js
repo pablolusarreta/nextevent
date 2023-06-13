@@ -65,7 +65,7 @@ const creaVentana = (f, d) => {
 //////////////////////////////////////////////////////////////////////////////
 
 app.on('ready', () => {
-	vcontrol = creaVentana('control.htm', [1240, 800, 800, 750])
+	vcontrol = creaVentana('control.htm', [1240, 800, 910, 750])
 });
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {

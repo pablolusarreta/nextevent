@@ -30,12 +30,12 @@ Guardado de proyectos en formato JSON.
   * Hacemos click en ` Minimizar ventana `.
 
 
-## Modos SINC:
+## Modos de sincronismo:
 * Se pueden elegir dos modos de funcionamiento:
-* ### Modo SINC : SINC
+* ### Modo SINCRONISMO : SINCRONO
   * En este modo todos los pasos se reproducen sincrónicamente.
   * Los pasos no se pueden solapar, cuando se pulsa GO el paso actual es eliminado y se muestra el siguiente.
-* ### Modo SINC : Audio
+* ### Modo SINCRONISMO : AUDIO ASINC
   * En este modo se crean dos flujos uno con imágenes y videos y otro solo con los audios.
 Si se esta reproduciendo una imagen y el siguiente paso es un audio la imagen quedara en la salida 
 mientras el sonido se reproduce, y no desaparecerá hasta que el siguiente paso sea una imagen o un video.
@@ -43,7 +43,9 @@ De igual manera el audio sonara asta terminar o hasta que el siguiente paso sea 
 
     * Si lo que se quiere hacer es terminar antes de tiempo un paso se pueden usar ficheros vacíos.
 
-
+* ### Atajos de teclado
+  * GO - Flecha derecha o Enter
+  * PAUSE - Contro
 
 ***
 ## Pantalla de control:

@@ -11,6 +11,7 @@ const carga_json = () => {
                     config = TMPD.config
                     cierra_form()
                     guarda_datos()
+                    carga_config()
                     crea_lista_pasos()
                     select_paso(id_select)
                 } else {

@@ -8,23 +8,17 @@ nav {
     color: #FFF;
     overflow: hidden;
     text-align: center;
-    /*box-shadow: 0 0 8px 4px #000;*/
 }
 
 nav>button {
     display: block;
-    width: 70px;
-    height: 70px;
-    margin: 3vh auto;
+    width: 60px;
+    height: 60px;
+    margin: 2.2vh auto;
     padding: 0px;
     font-size: 16px;
     background-color: rgba(255, 255, 255, 0);
-    border-radius: 50% 50%;
-    transition: background-color 1s;
-}
-
-nav>button:hover {
-    background-color: rgba(255, 255, 255, 0.1)
+    border-radius: 4px 4px;
 }
 
 nav>hr {
@@ -39,7 +33,6 @@ nav>button:nth-child(1) {
     border-radius: 3px 3px;
     font-size: 30px;
     border: 3px solid rgba(255, 255, 255, 0.2);
-
     height: 60px;
 }
 
@@ -49,9 +42,10 @@ nav>button:nth-child(1)>div {
 
 nav>button:nth-child(2) {
     height: 30px;
-    border-radius: 10px 10px;
 }
-
+nav>button:nth-child(2):hover {
+    background-color: #333;
+}
 nav>hr:nth-child(3), nav>hr:nth-child(8) {
     background-color: #fff;
     width: 100%;
@@ -60,40 +54,50 @@ nav>hr:nth-child(3), nav>hr:nth-child(8) {
 }
 
 nav>button:nth-child(4), nav>button:nth-child(5), nav>button:nth-child(6), nav>button:nth-child(7) {
-    width: 50px;
-    height: 50px;
+    margin-bottom: 0;
+    width: 40px;
+    height: 40px;
 }
 
 nav>button:nth-child(4), nav>button:nth-child(7) {
-    font-size: 64px;
+    font-size: 44px;
+    transition: color .0.2s;
 }
-
+nav>button:nth-child(4):hover {
+    color: #363;
+}
 nav>button:nth-child(4)>div {
+    font-size: 40px;
     margin-top: -26px;
 }
-
+nav>button:nth-child(5), nav>button:nth-child(6){
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 30px;
+}
 nav>button:nth-child(5)>div, nav>button:nth-child(6)>div {
     width: 0px;
     height: 0px;
     margin-top: -8px;
     margin-left: 11px;
-    border-bottom: 14px solid #ccc;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    opacity: 0.7;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    opacity: 0.5;
     transition: opacity 0.5s;
 }
 
 nav>button:nth-child(6)>div {
     margin-top: 8px;
     border-bottom: 0px;
-    border-top: 14px solid #ccc;
+    border-top: 8px solid #fff;
 }
 
 nav>button:nth-child(7)>div {
     transform: rotate(45deg);
     margin-top: -24px;
     margin-left: 8px;
+    transition: color 1;
 }
 
 nav>button:nth-child(7):hover {
@@ -107,20 +111,21 @@ nav>button:nth-child(5)>div:hover, nav>button:nth-child(6)>div:hover {
 /*GO Y PAUSE*/
 
 nav>button:nth-child(9) {
-    opacity: 0.3;
-    background-color: "#363";
+    position: absolute;
+    bottom: 130px;
+    right: 16px;
+    background-color: #222;
 }
 
 nav>button:nth-child(10) {
-    opacity: 0.3;
-    background-color: "#363";
-}
-
-nav>button:nth-child(10)>div {
+    background-color: #222;
     font-size: 30px;
     font-family: 'fuente400';
-    background-color: "#363";
+    position: absolute;
+    right: 16px;
+    bottom: 40px;
 }
+
 
 footer {
     position: fixed;
@@ -159,7 +164,6 @@ footer>div:nth-child(1), #info {
     height: 90px;
 }
 
-
 #contador>sup, #contador_audio>sup {
     font-size: 12px;
 }
@@ -187,14 +191,10 @@ footer>div:nth-child(6) {
     height: 6px;
 }
 
-#flujo::before {
-    content: 'SINC:';
-}
-
 #flujo {
     position: absolute;
     bottom: 8px;
-    right: 120px;
+    right: 100px;
     font-family: Consolas, "Courier New", "Andale Mono";
     font-size: 11px;
     background-color: #000;

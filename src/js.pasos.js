@@ -1,6 +1,7 @@
 const altPaso = 33
 var id_select = 0
 var idu_activo
+var escrol = 0
 
 function detecta_tipo(nom) {
     var ex = nom.split('.')
@@ -27,7 +28,15 @@ function paso_activo(IDU) {
     for (var i in pasos) {
         if (IDU == pasos[i].IDU) {
             document.getElementById(pasos[i].id).style.backgroundColor = "#363"
-            PS.scrollTo(0, (altPaso * i))
+            let tmp = altPaso * (Number(i) + 4)
+            console.log(window.innerHeight, tmp)
+            if (tmp > window.innerHeight) {
+                 PS.scrollTo(0,altPaso * escrol++)
+                console.log('fuera de pantalla',altPaso,' ',escrol)
+            } else {
+                escrol = 0
+                PS.scrollTo(0,0)
+            }
         } else {
             document.getElementById(pasos[i].id).style.backgroundColor = ""
         }
@@ -54,7 +63,7 @@ function guarda_paso() {
 function elimina_paso() {
     console.log(id_select)
     dialog.showMessageBox({
-        "title": "nextevent-sync",
+        "title": "nextevent",
         "buttons": ['Eliminar', 'NO eliminar'],
         "cancelId": 2,
         "message": '¿ Eliminar  " ' + pasos[id_select].nom + ' " ?',
@@ -76,7 +85,7 @@ function elimina_paso() {
 }
 function limpia_memoria() {
     dialog.showMessageBox({
-        "title": "nextevent-sync",
+        "title": "nextevent",
         "buttons": ['Eliminar', 'Cancelar'],
         "cancelId": 2,
         "message": "¿Eliminar todos los elementos de la lista?",
@@ -137,12 +146,7 @@ function crea_lista_pasos() {
             S += `</div>`
         }
     }
-    PS.innerHTML = `${S}<div id="relleno"></div>`
-    altRelleno()
+    PS.innerHTML = S
     select_paso(id_select)
     paso_activo(idu_activo)
 }
-const altRelleno = () => {
-    document.getElementById('relleno').style.height = `${window.innerHeight}px`
-}
-window.onresize = altRelleno

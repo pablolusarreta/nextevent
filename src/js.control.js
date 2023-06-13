@@ -126,7 +126,6 @@ const PAUSE = () => {
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////
-//enter:13,space:32,->:39,0:96
 const arranca = () => {
     carga_datos()
     carga_config()
@@ -152,10 +151,25 @@ window.onload = () => {
     CDA = document.getElementById("contador_audio")
     CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
+    document.title = 'nextevent 7.0.0'
     prueva()
     /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
     arranca()
     ventanaSalida()*/
+}
+//enter:13, space:32, ▷:39, 0:96, . 110, Ctrol 17
+window.onkeydown = e => {
+    if (e.keyCode === 13 || e.keyCode === 39) {
+        BG.click()
+    } else  if (e.keyCode === 17) {
+        PAUSE()
+    }else{
+        e.preventDefault()
+    }
+    //console.log(e.keyCode)
+}
+window.onbeforeunload = () => {
+    index.cierra_salida()
 }
 const prueva = () => {
     // final Miercoles, 1 de Enero de 2025
@@ -175,7 +189,4 @@ const prueva = () => {
             arranca()
         }, 5000)
     }
-}
-window.onbeforeunload = () => {
-    index.cierra_salida()
-}
+}/**/

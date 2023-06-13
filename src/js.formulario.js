@@ -11,7 +11,7 @@ const abre_form = () => {
 const dimensiones_img = (id) => {
     //console.log(id)
 }
-let form_edit, config_tmp
+let form_edit
 let mime = {
     'mp4': 'video/mp4',
     'webm': 'video/webm',
@@ -62,26 +62,25 @@ const abre_form_paso = (id) => {
 }
 
 
-const flujo = ['SINC','Audio']
+const flujo = ['SINCRONO','AUDIO ASINC']
 ///////////////////////////////////////////////////////////////////////////
 const abre_form_config = () => {
     FA.innerHTML = ''
-    config_tmp = config
     form_edit = new Array()
-    form_edit.push(crea_input_select(FA, 'SINC ', '20%', '0%', [0, 2, 1, config.flujo, ['Sinc', 'Audios asinc']], () => {
-        config_tmp.flujo = Number(form_edit[0].value);
-        document.getElementById('flujo').innerHTML= flujo[config_tmp.flujo]
+    form_edit.push(crea_input_select(FA, 'SINCRONISMO ', '20%', '0%', [0, 2, 1, config.flujo, ['SINCRONO', 'AUDIO ASINC']], () => {
+        config.flujo = Number(form_edit[0].value);
+        document.getElementById('flujo').innerHTML= flujo[config.flujo]
     }))
     crea_button(FA, 'CARGA PROYECTO', '20%', '10%', [], carga_json)
     crea_button(FA, 'GUARDA PROYECTO', '20%', '13%', [], guarda_json)
     crea_salto(FA, '0px')
     form_edit.push(crea_input_range(FA, 'Volumen', '60%', '0', [0, 100, 1, config.vol, [' %']], () => {
-        config_tmp.vol = form_edit[1].value;
+        config.vol = form_edit[1].value;
     }))
     crea_button(FA, 'APLICAR A TODOS', '20%', '10%', [], () => {
         for (var i in pasos) {
             if (pasos[i].tipo != 'img') {
-                pasos[i].vol = config_tmp.vol
+                pasos[i].vol = config.vol
             }
         }
         crea_lista_pasos()
@@ -90,13 +89,14 @@ const abre_form_config = () => {
     crea_salto(FA, '2px')
 
     form_edit.push(crea_input_select(FA, 'Al finalizar', '20%', '0', [0, 2, 1, config.fin, ['Stop', 'Bucle', 'Siguiente']], () => {
-        config_tmp.fin = Number(form_edit[2].value);
+        config.fin = Number(form_edit[2].value);
+        guarda_config()
     }))
 
     crea_button(FA, 'APLICAR A TODOS', '20%', '40%', [], () => {
         for (var i in pasos) {
             if (pasos[i].tipo != 'img') {
-                pasos[i].fin = config_tmp.fin
+                pasos[i].fin = config.fin
             }
         }
         crea_lista_pasos()
@@ -104,17 +104,18 @@ const abre_form_config = () => {
     })
     crea_salto(FA, '2px')
     form_edit.push(crea_input_range(FA, 'Fade visual', '88%', '0', [0, 10, 0.1, config.fade, [' seg']], () => {
-        config_tmp.fade = form_edit[3].value;
+        config.fade = form_edit[3].value;
+        guarda_config()
     }))
     crea_salto(FA, '20px')
-    crea_button(FA, 'GUARDA COFIG', '20%', '0', [], () => {
+    /*crea_button(FA, 'GUARDA CONFIG', '20%', '0', [], () => {
         config = config_tmp
         guarda_config()
         cierra_form()
-    })
+    })*/
 
-    crea_button(FA, 'ELIMINAR LISTA', '20%', '10%', [], limpia_memoria)
-    crea_button(FA, 'CANCELA', '20%', '20%', [], cierra_form)
+    crea_button(FA, 'ELIMINAR LISTA', '20%', '0', [], limpia_memoria)
+    crea_button(FA, 'CERRAR', '20%', '60%', [], cierra_form)
 
 
     FA.style.height = '360px'
