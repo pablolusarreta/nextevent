@@ -44,10 +44,10 @@ const abre_form_paso = (id) => {
         form_edit.push(crea_input_select(FA, 'Al finalizar', '80px', '80px', [0, 2, 1, PA.fin, ['Stop', 'Bucle', 'Siguiente']], () => {
             PAtmp.fin = form_edit[3].value;
         }))
-        crea_button(FA, 'ACEPTAR', '20%', '0', [], () => { PA = PAtmp; guarda_paso() })
+        crea_button(FA, 'GUARDAR', '20%', '0', [], () => { PA = PAtmp; guarda_paso() })
         FA.style.height = '240px'
     } else {
-        crea_button(FA, 'ACEPTAR', '20%', '0', [], () => { PA = PAtmp; guarda_paso() })
+        crea_button(FA, 'GUARDAR', '20%', '0', [], () => { PA = PAtmp; guarda_paso() })
         FA.style.height = '190px'
     }
 
@@ -77,7 +77,7 @@ const abre_form_config = () => {
     form_edit.push(crea_input_range(FA, 'Volumen', '60%', '0', [0, 100, 1, config.vol, [' %']], () => {
         config.vol = form_edit[1].value;
     }))
-    crea_button(FA, 'APLICAR A TODOS', '20%', '10%', [], () => {
+    crea_button(FA, 'APLICAR A TODOS', '20%', '140px', [], () => {
         for (var i in pasos) {
             if (pasos[i].tipo != 'img') {
                 pasos[i].vol = config.vol
@@ -93,7 +93,7 @@ const abre_form_config = () => {
         guarda_config()
     }))
 
-    crea_button(FA, 'APLICAR A TODOS', '20%', '40%', [], () => {
+    crea_button(FA, 'APLICAR A TODOS', '20%', '380px', [], () => {
         for (var i in pasos) {
             if (pasos[i].tipo != 'img') {
                 pasos[i].fin = config.fin
@@ -108,12 +108,6 @@ const abre_form_config = () => {
         guarda_config()
     }))
     crea_salto(FA, '20px')
-    /*crea_button(FA, 'GUARDA CONFIG', '20%', '0', [], () => {
-        config = config_tmp
-        guarda_config()
-        cierra_form()
-    })*/
-
     crea_button(FA, 'ELIMINAR LISTA', '20%', '0', [], limpia_memoria)
     crea_button(FA, 'CERRAR', '20%', '60%', [], cierra_form)
 

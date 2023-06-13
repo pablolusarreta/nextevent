@@ -10,7 +10,7 @@ nav {
     text-align: center;
 }
 
-nav>button {
+nav>button, nav>div {
     display: block;
     width: 60px;
     height: 60px;
@@ -29,7 +29,7 @@ nav>hr {
 }
 
 nav>button:nth-child(1) {
-    margin-top: 40px;
+    margin-top: 50px;
     border-radius: 3px 3px;
     font-size: 30px;
     border: 3px solid rgba(255, 255, 255, 0.2);
@@ -43,9 +43,11 @@ nav>button:nth-child(1)>div {
 nav>button:nth-child(2) {
     height: 30px;
 }
+
 nav>button:nth-child(2):hover {
     background-color: #333;
 }
+
 nav>hr:nth-child(3), nav>hr:nth-child(8) {
     background-color: #fff;
     width: 100%;
@@ -63,18 +65,22 @@ nav>button:nth-child(4), nav>button:nth-child(7) {
     font-size: 44px;
     transition: color .0.2s;
 }
+
 nav>button:nth-child(4):hover {
     color: #363;
 }
+
 nav>button:nth-child(4)>div {
     font-size: 40px;
     margin-top: -26px;
 }
-nav>button:nth-child(5), nav>button:nth-child(6){
+
+nav>button:nth-child(5), nav>button:nth-child(6) {
     margin-top: 0;
     margin-bottom: 0;
     height: 30px;
 }
+
 nav>button:nth-child(5)>div, nav>button:nth-child(6)>div {
     width: 0px;
     height: 0px;
@@ -108,16 +114,29 @@ nav>button:nth-child(5)>div:hover, nav>button:nth-child(6)>div:hover {
     opacity: 1
 }
 
+/*relog*/
+
+nav>div:nth-child(9) {
+    position: absolute;
+    top: 0px;
+    right: 16px;
+    height: auto;
+    font-family: Consolas, "Courier New", "Andale Mono";
+    font-weight: 900;
+    font-size:20px;
+    opacity: .5;
+}
+
 /*GO Y PAUSE*/
 
-nav>button:nth-child(9) {
+nav>button:nth-child(10) {
     position: absolute;
     bottom: 130px;
     right: 16px;
     background-color: #222;
 }
 
-nav>button:nth-child(10) {
+nav>button:nth-child(11) {
     background-color: #222;
     font-size: 30px;
     font-family: 'fuente400';

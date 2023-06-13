@@ -63,7 +63,7 @@ function guarda_paso() {
 function elimina_paso() {
     console.log(id_select)
     dialog.showMessageBox({
-        "title": "nextevent",
+        "title": version,
         "buttons": ['Eliminar', 'NO eliminar'],
         "cancelId": 2,
         "message": '¿ Eliminar  " ' + pasos[id_select].nom + ' " ?',
@@ -85,7 +85,7 @@ function elimina_paso() {
 }
 function limpia_memoria() {
     dialog.showMessageBox({
-        "title": "nextevent",
+        "title": version,
         "buttons": ['Eliminar', 'Cancelar'],
         "cancelId": 2,
         "message": "¿Eliminar todos los elementos de la lista?",

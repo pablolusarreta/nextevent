@@ -5,7 +5,9 @@ const url = require('url')
 const fs = require('fs')
 const index = require('electron').remote.require('./index')
 
-let BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado
+const version = 'nextevent 7.1.0'
+
+let BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado, ahora
 let pausado = false
 let ext = {
     video: ['mp4', 'webm', 'ogg'],
@@ -149,9 +151,14 @@ window.onload = () => {
     FA = document.getElementById("formulario")
     IF = document.getElementById("info")
     CDA = document.getElementById("contador_audio")
+    RL = document.getElementById("relog")
     CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
-    document.title = 'nextevent 7.0.0'
+    document.title = version
+    setInterval(()=>{
+        ahora = new Date()
+        RL.innerHTML = `${ahora.getHours()}:${ahora.getMinutes()}` 
+    },1000)
     prueva()
     /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
     arranca()
