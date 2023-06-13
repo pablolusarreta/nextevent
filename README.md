@@ -44,8 +44,8 @@ De igual manera el audio sonara asta terminar o hasta que el siguiente paso sea 
     * Si lo que se quiere hacer es terminar antes de tiempo un paso se pueden usar ficheros vacíos.
 
 * ### Atajos de teclado
-  * GO - Flecha derecha o Enter
-  * PAUSE - Contro
+  * GO - Flecha derecha  ` ▷ ` o  `Enter`
+  * PAUSE - Control  `Ctrl`
 
 ***
 ## Pantalla de control:
