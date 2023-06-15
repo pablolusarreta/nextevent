@@ -29,15 +29,15 @@ nav>hr {
 }
 
 nav>button:nth-child(1) {
-    margin-top: 50px;
+    margin-top: 60px;
     border-radius: 3px 3px;
     font-size: 30px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    height: 60px;
+    border: 3px solid rgba(255, 0, 0, 0.4);
+    height: 40px;
 }
 
 nav>button:nth-child(1)>div {
-    margin-top: -5.5px;
+    margin-top: -6px;
 }
 
 nav>button:nth-child(2) {
@@ -119,12 +119,13 @@ nav>button:nth-child(5)>div:hover, nav>button:nth-child(6)>div:hover {
 nav>div:nth-child(9) {
     position: absolute;
     top: 0px;
-    right: 16px;
+    right: 8px;
+    width: auto;
     height: auto;
     font-family: Consolas, "Courier New", "Andale Mono";
-    font-weight: 900;
-    font-size:20px;
-    opacity: .5;
+    font-weight: 100;
+    font-size: 28px;
+    opacity: .2;
 }
 
 /*GO Y PAUSE*/
@@ -213,7 +214,7 @@ footer>div:nth-child(6) {
 #flujo {
     position: absolute;
     bottom: 8px;
-    right: 100px;
+    right: 120px;
     font-family: Consolas, "Courier New", "Andale Mono";
     font-size: 11px;
     background-color: #000;

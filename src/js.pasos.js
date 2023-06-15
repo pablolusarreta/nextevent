@@ -1,7 +1,7 @@
 const altPaso = 33
 var id_select = 0
 var idu_activo
-var escrol = 0
+var escrol = 1
 
 function detecta_tipo(nom) {
     var ex = nom.split('.')
@@ -28,13 +28,13 @@ function paso_activo(IDU) {
     for (var i in pasos) {
         if (IDU == pasos[i].IDU) {
             document.getElementById(pasos[i].id).style.backgroundColor = "#363"
-            let tmp = altPaso * (Number(i) + 4)
+            let tmp = altPaso * (Number(i) + 5)
             console.log(window.innerHeight, tmp)
             if (tmp > window.innerHeight) {
                  PS.scrollTo(0,altPaso * escrol++)
                 console.log('fuera de pantalla',altPaso,' ',escrol)
             } else {
-                escrol = 0
+                escrol = 1
                 PS.scrollTo(0,0)
             }
         } else {
@@ -146,7 +146,7 @@ function crea_lista_pasos() {
             S += `</div>`
         }
     }
-    PS.innerHTML = S
+    PS.innerHTML = `${S}<div></div><div></div>`
     select_paso(id_select)
     paso_activo(idu_activo)
 }

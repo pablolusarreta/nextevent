@@ -5,7 +5,7 @@ const url = require('url')
 const fs = require('fs')
 const index = require('electron').remote.require('./index')
 
-const version = 'nextevent 7.1.0'
+const version = 'nextevent 7.1.2'
 
 let BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado, ahora
 let pausado = false
@@ -155,25 +155,28 @@ window.onload = () => {
     CD = document.getElementById("contador")
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
     document.title = version
-    setInterval(()=>{
-        ahora = new Date()
-        RL.innerHTML = `${ahora.getHours()}:${ahora.getMinutes()}` 
-    },1000)
+    setInterval(() => {
+        ahora = new Date(); let h = ahora.getHours(); let m = ahora.getMinutes();
+        RL.innerHTML = ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m)
+    }, 1000)
     prueva()
-    /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan")) 
+    /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))*/
     arranca()
-    ventanaSalida()*/
+    //ventanaSalida()
 }
-//enter:13, space:32, ▷:39, 0:96, . 110, Ctrol 17
+
 window.onkeydown = e => {
-    if (e.keyCode === 13 || e.keyCode === 39) {
+    if (e.code === 'ArrowRight' || e.code === 'Enter') {
         BG.click()
-    } else  if (e.keyCode === 17) {
+    } else if (e.code === 'ControlRight') {
         PAUSE()
-    }else{
-        e.preventDefault()
+    } else if (e.code === 'ArrowLeft') {
+        //ATRAS()
+    } else if (e.code === 'Space') {
+        //e.preventDefault()
     }
-    //console.log(e.keyCode)
+    console.log(e.code)
+
 }
 window.onbeforeunload = () => {
     index.cierra_salida()

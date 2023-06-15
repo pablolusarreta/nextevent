@@ -1,0 +1,155 @@
+{
+    "ID": "nextevent 2022",
+    "pasos": [
+        {
+            "IDU": 1677173043379,
+            "nom": "After youve gone Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/After youve gone Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "0"
+        },
+        {
+            "IDU": 1677173043380,
+            "nom": "All Blues new version Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/All Blues new version Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "1"
+        },
+        {
+            "IDU": 1677173043382,
+            "nom": "All Of Me Double Bass Line play Along Backing Track Accompaniment.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/All Of Me Double Bass Line play Along Backing Track Accompaniment.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "2"
+        },
+        {
+            "IDU": 1677173043383,
+            "nom": "AUTUMN LEAVES E minor Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/AUTUMN LEAVES E minor Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "3"
+        },
+        {
+            "IDU": 1677173043385,
+            "nom": "Black Orpheus Tango Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Black Orpheus Tango Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": 66,
+            "fin": "0",
+            "id": "4"
+        },
+        {
+            "IDU": 1677173043386,
+            "nom": "Blue Bossa Bass Line backing track play along accompaniment.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Blue Bossa Bass Line backing track play along accompaniment.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "5"
+        },
+        {
+            "IDU": 1677173043390,
+            "nom": "Fly Me To The Moon medup Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Fly Me To The Moon medup Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "6"
+        },
+        {
+            "IDU": 1677173043391,
+            "nom": "Isnt She Lovely Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Isnt She Lovely Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "7"
+        },
+        {
+            "IDU": 1677173043388,
+            "nom": "Bossa Dorado Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Bossa Dorado Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "8"
+        },
+        {
+            "IDU": 1677173043392,
+            "nom": "Minor Swing Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Minor Swing Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "9"
+        },
+        {
+            "IDU": 1677173043393,
+            "nom": "Sunny Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Sunny Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "10"
+        },
+        {
+            "IDU": 1677173043395,
+            "nom": "Swing Gitan Bass Line Play Along Backing Track.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/Swing Gitan Bass Line Play Along Backing Track.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "11"
+        },
+        {
+            "IDU": 1677173043396,
+            "nom": "The Girl From Ipanema Bass Play Along Line Backing Track Accompaniment.mp3",
+            "text": "",
+            "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Play-back solo bajo/The Girl From Ipanema Bass Play Along Line Backing Track Accompaniment.mp3",
+            "tipo": "audio",
+            "mime": "audio/mpeg",
+            "vol": "100",
+            "fin": "0",
+            "id": "12"
+        }
+    ],
+    "config": {
+        "vol": "100",
+        "fin": "0",
+        "fade": "1.1",
+        "fichero": "",
+        "flujo": 1
+    }
+}
