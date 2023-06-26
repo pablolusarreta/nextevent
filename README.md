@@ -1,7 +1,6 @@
 # nextevent
 
 Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
-commit
 ## Instalación:
 * Descargar el .zip en la pestaña `Code v`  `Download ZIP`.
 * Descomprimir.
