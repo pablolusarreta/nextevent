@@ -1,4 +1,4 @@
-# <span style="color:#066;letter-spacing:4px;font-size:46px">nextevent <sub style="font-size:14px">7.2.0</sub></span>
+# n e x t e v e n t &nbsp;    <sub> 7.2.0</sub> 
 
 Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 ## Instalación:
