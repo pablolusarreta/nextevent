@@ -1,10 +1,10 @@
-# nextevent
+# <span style="color:#066;letter-spacing:4px;font-size:46px">nextevent <sub style="font-size:14px">7.2.0</sub></span>
 
 Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 ## Instalación:
 * Descargar el .zip en la pestaña `Code v`  `Download ZIP`.
 * Descomprimir.
-* Ejecutar de la carpeta `dist/` `nextevent Setup 7.1.0.exe`.
+* Ejecutar de la carpeta `dist/` `nextevent Setup x.x.x.exe`.
 
   * Si no quereis instalarlo ejecútalo directamente en:
 `dist/win-unpacked/nextevent.exe`
