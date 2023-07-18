@@ -1,5 +1,5 @@
 const index = require('electron').remote.require('./index')
-let salida, config, ES, PA, motor_audio //Elemento Seleccionado,  Paso Actual
+let salida, salida_audio, audio, config, ES, PA, salvaPantalla, motor_audio //Elemento Seleccionado,  Paso Actual
 PA = false
 require('electron').ipcRenderer.on('GO', (e, ob) => {
     config = JSON.parse(localStorage.getItem('NEXTEVENTSIMPLECONFIG'))
@@ -132,7 +132,11 @@ window.onload = () => {
     salida = document.getElementById("contenedor")
     salida_audio = document.getElementById("contenedor_audio")
     audio = document.getElementById("audio")
+    salvaPantalla = document.getElementById("salvaPantalla")
     info_salida()
+    setInterval(() => {
+        salvaPantalla.innerHTML=new Date().getTime()
+    }, 1000)
 }
 window.onclick = () => {
     let context = new AudioContext()

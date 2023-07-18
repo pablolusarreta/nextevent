@@ -1,6 +1,6 @@
 {
   "name": "nextevent",
-  "version": "7.0.0",
+  "version": "7.2.0",
   "description": "Secuenciador de ficheros multimedia simple y semisincronico",
   "main": "index.js",
   "scripts": {

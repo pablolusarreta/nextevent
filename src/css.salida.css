@@ -76,3 +76,11 @@
 			height: 0px;
 			overflow: hidden;
 		}
+		#salvaPantalla {
+			position: fixed;
+			top: 20px;
+			left: 40px;
+			font-size: 6px;
+			color: #000;
+			opacity: 0.01;
+		}

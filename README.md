@@ -4,7 +4,7 @@ Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https:/
 ## Instalación:
 * Descargar el .zip en la pestaña `Code v`  `Download ZIP`.
 * Descomprimir.
-* Ejecutar de la carpeta `dist/` `nextevent Setup 7.0.7.exe`.
+* Ejecutar de la carpeta `dist/` `nextevent Setup 7.1.0.exe`.
 
   * Si no quereis instalarlo ejecútalo directamente en:
 `dist/win-unpacked/nextevent.exe`

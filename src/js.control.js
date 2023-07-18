@@ -5,7 +5,7 @@ const url = require('url')
 const fs = require('fs')
 const index = require('electron').remote.require('./index')
 
-const version = 'nextevent 7.1.2'
+const version = 'nextevent 7.2.0'
 
 let BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado, ahora
 let pausado = false
