@@ -173,7 +173,8 @@ window.onkeydown = e => {
     } else if (e.code === 'ArrowLeft') {
         //ATRAS()
     } else if (e.code === 'Space') {
-        //e.preventDefault()
+        e.stopPropagation();
+        return false      
     }
     console.log(e.code)
 
