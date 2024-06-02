@@ -23,6 +23,7 @@
     opacity: 0;
     transition: all 0.2s;
     border-radius: 6px;
+    text-align: right;
 }
 
 #formulario::before, #formulario::after {
@@ -85,6 +86,7 @@
 #formulario>div>input[type=text],
 #formulario>select {
     outline: none;
+    /*color:#f99;*/
 }
 
 #formulario>input[type=range],
@@ -94,7 +96,9 @@
     box-sizing: border-box;
     margin: 20px 0px;
 }
-
+#formulario>div.input_text{
+    margin: 10px 0px;
+}
 #formulario>input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -107,7 +111,7 @@
 
 #formulario>button {
     font-size: 13px;
-    min-width: 92px;
+    min-width: 0px;
     padding: 10px;
     color: #999;
     background-color: rgba(255, 255, 255, 0.1);

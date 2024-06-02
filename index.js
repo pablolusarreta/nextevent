@@ -51,7 +51,11 @@ const creaVentana = (f, d) => {
 		backgroundColor: '#000',
 		show: true,
 		icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
-		webPreferences: { nodeIntegration: true }
+		webPreferences: {
+			contextIsolation: false,
+			nodeIntegration: true,
+			nodeIntegrationInWorker: true
+		}
 	})
 
 	ventana.loadURL(url.format({
@@ -60,11 +64,22 @@ const creaVentana = (f, d) => {
 		slashes: true
 	}))
 	ventana.setMenu(null)
+	//ventana.webContents.openDevTools()
 	return ventana
 }
 //////////////////////////////////////////////////////////////////////////////
 
 app.on('ready', () => {
+
+	const { session } = require('electron');
+	session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
+		if (permission === 'media') {
+			callback(true);
+		} else {
+			callback(false);
+		}
+	})
+
 	vcontrol = creaVentana('control.htm', [1240, 800, 910, 750])
 });
 app.on('window-all-closed', () => {
@@ -77,7 +92,7 @@ app.on('activate', () => {
 		vcontrol = creaVentana('control.htm', [1240, 800, 800, 750])
 	}
 });
-/*if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
 	require('electron-reload')(__dirname, {
 		electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
 	});

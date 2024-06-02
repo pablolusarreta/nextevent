@@ -8,9 +8,13 @@
     src: url(../fuentes/segoeui700.woff);
     font-weight: 900;
 }
-
+@font-face {
+    font-family: 'fuenteMono';
+    src: url(../fuentes/SometypeMono-Bold.ttf);
+    font-weight: 100;
+}
 body {
-    font-family: fuente100, Tahoma, Geneva, Verdana;
+    font-family: fuente100;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -21,7 +25,7 @@ body {
 }
 
 button {
-    font-family: fuente400, Tahoma, Geneva, Verdana;
+    font-family: fuente400;
     padding: 6px 20px;
     border: none;
     outline: none;
@@ -37,12 +41,12 @@ button:hover {
 }
 
 input {
-    font-family: fuente100, Tahoma, Geneva, Verdana;
+    font-family: fuente100;
     cursor: context-menu;
 }
 
 select {
-    font-family: fuente100, Tahoma, Geneva, Verdana;
+    font-family: fuente100;
     border: none;
     color: #fff;
     background-color: transparent;

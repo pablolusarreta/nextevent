@@ -31,11 +31,11 @@ function paso_activo(IDU) {
             let tmp = altPaso * (Number(i) + 5)
             console.log(window.innerHeight, tmp)
             if (tmp > window.innerHeight) {
-                 PS.scrollTo(0,altPaso * escrol++)
-                console.log('fuera de pantalla',altPaso,' ',escrol)
+                PS.scrollTo(0, altPaso * escrol++)
+                console.log('fuera de pantalla', altPaso, ' ', escrol)
             } else {
                 escrol = 1
-                PS.scrollTo(0,0)
+                PS.scrollTo(0, 0)
             }
         } else {
             document.getElementById(pasos[i].id).style.backgroundColor = ""
@@ -61,8 +61,12 @@ function guarda_paso() {
     crea_lista_pasos()
 }
 function elimina_paso() {
-    console.log(id_select)
-    dialog.showMessageBox({
+    pasos.splice(id_select, 1)
+    actualiza_id()
+    guarda_datos()
+    crea_lista_pasos()
+    cierra_form()
+    /*dialog.showMessageBox({
         "title": version,
         "buttons": ['Eliminar', 'NO eliminar'],
         "cancelId": 2,
@@ -81,10 +85,15 @@ function elimina_paso() {
         }
     }).catch(err => {
         console.log(err)
-    })
+    })*/
+
 }
 function limpia_memoria() {
-    dialog.showMessageBox({
+    pasos = new Array()
+            cierra_form()
+            elimina_memoria_local()
+            crea_lista_pasos()
+    /*dialog.showMessageBox({
         "title": version,
         "buttons": ['Eliminar', 'Cancelar'],
         "cancelId": 2,
@@ -101,7 +110,7 @@ function limpia_memoria() {
         }
     }).catch(err => {
         console.log(err)
-    })
+    })*/
 }
 function ordena_paso(n) {
     var tm = pasos.length
@@ -128,21 +137,23 @@ function crea_lista_pasos() {
     //var tips = { img: '⛰▲', audio: '♫', video: '..' }
     let simb = ['◻', '↺', '▷']
     let tips = { img: 'I', audio: 'A', video: 'V' }
-    let id, alerta, v, s, S = ""
+    let id, alerta, s, S = ""
     if (pasos.length > 0) {
         for (var i in pasos) {
             id = pasos[i].id
             alerta = (existe(pasos[i].ruta) == false) ? ' style="color:#c99"' : ''
             S += `<div id='${id}' onclick='select_paso(${id})'>`
-            S += `<div>${i}</div><div class='${pasos[i].tipo}'>${tips[pasos[i].tipo]}</div>`
-            v = pasos[i].vol
-            s = (v == "0") ? " style='background-color:transparent'" : ""
-            S += `<div title='${pasos[i].ruta.replace('\\', '/')}'${alerta}>${pasos[i].nom}</div>`
-            S += `<div title='${pasos[i].text}'>${pasos[i].text.replace('<', ' ')}</div>`
-            // S += "<div>" + pasos[i].IDU + "</div>"
-            S += `<div${s}><div style='width:${v}px'></div></div>`
-            S += `<div>${((pasos[i].tipo != 'img') ? simb[pasos[i].fin] : '')}</div>`
-            S += `<div><button onclick='abre_form_paso(${id})'><div></div><div></div><div></div></button></div>`
+            S += `  <div>${i}</div><div class='${pasos[i].tipo}'>${tips[pasos[i].tipo]}</div>`
+
+            S += `  <div title='${pasos[i].ruta.replace('\\', '/')}'${alerta}>${pasos[i].nom}</div>`
+            S += `  <div title='${pasos[i].text}'>${pasos[i].text.replace('<', ' ')}</div>`
+            //  S += `  <div>${pasos[i].IDU}</div>`
+            S += `  <div><div style='width:${pasos[i].volL ? pasos[i].volL : 0}px'></div></div>`
+            S += `  <div><div style='width:${pasos[i].volR ? pasos[i].volR : 0}px'></div></div>`
+            //
+
+            S += `  <div>${((pasos[i].tipo != 'img') ? simb[pasos[i].fin] : '')}</div>`
+            S += `  <div><button onclick='abre_form_paso(${id})'><div></div><div></div><div></div></button></div>`
             S += `</div>`
         }
     }

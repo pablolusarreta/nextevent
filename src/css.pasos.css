@@ -25,7 +25,7 @@
 #pasos>div {
     display: grid;
     grid: 20px / 50px 20px 250px auto 100px 20px 60px;
-    width: calc(100vw - 200px);
+    width: calc(100vw - 160px);
     height: 20px;
     padding: 6px;
     margin: 0px 30px;
@@ -57,6 +57,7 @@
     /*text-transform: capitalize;*/
     text-align: center;
 }
+
 #pasos>div>div:nth-child(3), #pasos>div>div:nth-child(4) {
     text-align: left;
     overflow: hidden;
@@ -65,7 +66,8 @@
 
 #pasos>div>div:nth-child(4) {
     color: #fff;
-    padding-left: 40px;
+    padding-left: 20px;
+    border:none;
 }
 
 #pasos>div>div.audio, #pasos>div>div.video, #pasos>div>div.img {
@@ -101,33 +103,41 @@
     background-color: #fff;
     color: #666;
 }*/
-
-#pasos>div>div:nth-child(5) {
+/* VOLUMENES */
+#pasos>div>div:nth-child(5), #pasos>div>div:nth-child(6) {
     position: relative;
-    top: 8px;
+    top: 4px;
     padding: 0px;
+    width: 100px;
     height: 4px;
-    background-color: #191919;
-    color: #000;
-}
-
-#pasos>div>div:nth-child(5)>div {
-    height: 4px;
-    background-color: #414141;
 }
 
 #pasos>div>div:nth-child(6) {
+    top: 12px;
+    left: -100px;
+}
+
+#pasos>div>div:nth-child(5)>div, #pasos>div>div:nth-child(6)>div {
+    height: 4px;
+    background-color: #404040;
+}
+
+/*-------------------------------*/
+#pasos>div>div:nth-child(7) {
+    position: relative;
     font-size: 16px;
     opacity: 0.2;
     color: #fff;
+    right: 10px;
 }
 
 /* BOTON MENU *****************************************/
-#pasos>div>div:nth-child(7) {
-    text-align: right;
+#pasos>div>div:nth-child(8) {
+    position: absolute;
+    right: 24px;
 }
 
-#pasos>div>div:nth-child(7)>button {
+#pasos>div>div:nth-child(8)>button {
     padding: 0px 4px;
     width: 40px;
     height: 20px;
@@ -135,11 +145,11 @@
     background-color: rgba(255, 255, 255, 0);
 }
 
-#pasos>div>div:nth-child(7)>button:hover {
+#pasos>div>div:nth-child(8)>button:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-#pasos>div>div:nth-child(7)>button>div, nav>button:nth-child(2)>div {
+#pasos>div>div:nth-child(8)>button>div, nav>button:nth-child(2)>div {
     display: inline-block;
     margin: 2px;
     margin-bottom: 4px;

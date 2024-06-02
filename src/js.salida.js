@@ -1,6 +1,18 @@
 const index = require('electron').remote.require('./index')
-let salida, salida_audio, audio, config, ES, PA, salvaPantalla, motor_audio //Elemento Seleccionado,  Paso Actual
+let salida, salida_audio, config, ES, PA, salvaPantalla, OUPUTS //Elemento Seleccionado,  Paso Actual
 PA = false
+navigator.mediaDevices.enumerateDevices()
+    .then(devices => {
+        OUPUTS = []
+        for (let i in devices) {
+            if (devices[i].kind === 'audiooutput') {
+                OUPUTS.push(devices[i].deviceId)
+            }
+        }
+    }).
+    catch(err => {
+        console.error(err)
+    })
 require('electron').ipcRenderer.on('GO', (e, ob) => {
     config = JSON.parse(localStorage.getItem('NEXTEVENTSIMPLECONFIG'))
     if (PA.tipo == 'audio') {
@@ -11,8 +23,7 @@ require('electron').ipcRenderer.on('GO', (e, ob) => {
     }
     //------------------------------
     PA = ob
-    console.log('Paso Actual' + PA)
-    console.log(PA)
+    //console.log('Paso Actual' + PA)
     if (PA.tipo != 'audio') {
         salida.style.transition = 'opacity ' + config.fade + 's'
         salida.style.opacity = "0"
@@ -42,16 +53,44 @@ require('electron').ipcRenderer.on('play:salida', (e) => {
 
 
 const fade_in = () => { salida.style.opacity = "1" }
-const fade_audio_out = ele => {
+/*const fade_audio_out = ele => {
     let vol = ele.volume
     motor_audio = setInterval(() => {
         vol -= Number(config.fade) / 100
         vol = (vol < 0) ? 0 : vol
         ele.volume = vol
     }, 100)
+}*/
+const panorama = (audio, L, R) => {
+    let audioCtx = new window.AudioContext();
+    let source = audioCtx.createMediaElementSource(audio);
+    let gainLeft = audioCtx.createGain();
+    let gainRight = audioCtx.createGain();
+    let splitter = audioCtx.createChannelSplitter(2);
+    let merger = audioCtx.createChannelMerger(2);
+    source.connect(splitter);
+    splitter.connect(gainLeft, 0);
+    splitter.connect(gainRight, 1);
+    gainLeft.connect(merger, 0, 0);
+    gainRight.connect(merger, 0, 1);
+    merger.connect(audioCtx.destination);
+    gainLeft.gain.value = L;
+    gainRight.gain.value = R;
 }
 
-const asigna_eventos = (ob) => {
+const ouput = (audio, id) => {
+    audio.crossOrigin = "anonymous"
+    console.log(OUPUTS[id], audio.crossOrigin)
+    audio.setSinkId(OUPUTS[id])
+        .then(() => {
+            console.log("Dispositivo de salida asignado correctamente")
+        })
+        .catch(err => {
+            console.error(err)
+        });
+}
+
+const asigna_eventos = ob => {
     ob.addEventListener("timeupdate", (e) => {
         index.reproduccion(ob.currentTime, ob.duration, ob.firstChild.src)
         //console.log(document.getElementById('contenedor').firstChild.firstChild.getAttribute('src'),ob.currentTime,' | ',ob.duration)
@@ -64,17 +103,19 @@ const asigna_eventos = (ob) => {
                 if (PA.fin == 2) index.GOGO()
             }
         }
-
     }, true);
     ob.addEventListener("paused", (e) => {
         index.PAUSE()
     }, true);
     ob.addEventListener("playing", (e) => {
         index.PLAY()
+
     }, true);
     ob.addEventListener("loadedmetadata", (e) => {
+        panorama(ob, (PA.volL / 100), (PA.volR / 100))
+        ouput(ob, PA.ouput)
         ob.play()
-        ob.volume = Number(PA.vol) / 100
+        //ob.volume = Number(PA.volL) / 100
     }, true);
 }
 
@@ -135,7 +176,7 @@ window.onload = () => {
     salvaPantalla = document.getElementById("salvaPantalla")
     info_salida()
     setInterval(() => {
-        salvaPantalla.innerHTML=new Date().getTime()
+        salvaPantalla.innerHTML = new Date().getTime()
     }, 1000)
 }
 window.onclick = () => {

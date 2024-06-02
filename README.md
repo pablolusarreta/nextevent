@@ -1,4 +1,4 @@
-# n e x t e v e n t &nbsp;    <sub> 7.2.0</sub> 
+# n e x t e v e n t &nbsp;    <sub> 8.0.0</sub> 
 
 Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 ## Instalación:
@@ -44,7 +44,7 @@ De igual manera el audio sonara asta terminar o hasta que el siguiente paso sea 
 
 * ### Atajos de teclado
   * GO - Flecha derecha  ` ▷ ` o  `Enter`
-  * PAUSE - Control  `Ctrl`
+  * PAUSE - Control derecho  `ControlRight`
 
 ***
 ## Pantalla de control:

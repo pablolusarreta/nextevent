@@ -12,15 +12,16 @@ function elimina_memoria_local() {
 }
 ///////////////////////////////////////////////////////////////////////
 var config = {
-    vol: "100",
-    fin: "0",
-    fade: "2",
+    flujo: 0,
+    vol: 100,
+    fin: 0,
+    fade: 2,
     fichero: ""
 }
 function carga_config() {
     if (localStorage.NEXTEVENTSIMPLECONFIG) {
         config = JSON.parse(localStorage.getItem('NEXTEVENTSIMPLECONFIG'));
-        document.getElementById('flujo').innerHTML= flujo[config.flujo]
+        document.getElementById('flujo').innerHTML = flujo[config.flujo]
     } else {
         guarda_config()
     }

@@ -116,28 +116,30 @@ nav>button:nth-child(5)>div:hover, nav>button:nth-child(6)>div:hover {
 
 /*relog*/
 
-nav>div:nth-child(9) {
+#relog {
     position: absolute;
-    top: 0px;
-    right: 8px;
-    width: auto;
-    height: auto;
-    font-family: Consolas, "Courier New", "Andale Mono";
-    font-weight: 100;
-    font-size: 28px;
-    opacity: .2;
+    top: 20px;
+    right: 15px;
+    font-family: 'fuenteMono';
+    font-size: 16px;
+    color:#363;
+    letter-spacing: -1px;
+}
+
+#relog>span {
+    font-size: 14px;
 }
 
 /*GO Y PAUSE*/
 
-nav>button:nth-child(10) {
+nav>button:nth-child(9) {
     position: absolute;
     bottom: 130px;
     right: 16px;
     background-color: #222;
 }
 
-nav>button:nth-child(11) {
+nav>button:nth-child(10) {
     background-color: #222;
     font-size: 30px;
     font-family: 'fuente400';
@@ -177,8 +179,9 @@ footer>div:nth-child(1), #info {
 }
 
 #contador, #contador_audio, footer>div:nth-child(5) {
-    font-family: Consolas, "Courier New", "Andale Mono";
+    font-family: 'fuenteMono';
     font-size: 16px;
+    letter-spacing: -2px;
     color: #606060;
     margin-top: 3px;
     height: 90px;
@@ -213,10 +216,11 @@ footer>div:nth-child(6) {
 
 #flujo {
     position: absolute;
-    bottom: 8px;
+    bottom: 6px;
     right: 120px;
-    font-family: Consolas, "Courier New", "Andale Mono";
-    font-size: 11px;
+    font-family: 'fuenteMono';
+    font-size: 14px;
+    letter-spacing: -1px;
     background-color: #000;
     padding: 2px 6px;
     color: #606060;
@@ -225,9 +229,9 @@ footer>div:nth-child(6) {
 
 #info_s {
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 14px;
-    font-family: Consolas, "Courier New", "Andale Mono";
+    font-family: 'fuenteMono';
     height: 20px;
     border: none;
     opacity: 0.3;

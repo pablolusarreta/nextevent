@@ -5,7 +5,7 @@ const url = require('url')
 const fs = require('fs')
 const index = require('electron').remote.require('./index')
 
-const version = 'nextevent 7.2.0'
+const version = 'nextevent 8.0.0'
 
 let BV, BG, IS, PA, PAtmp, P, PS, FA, inf_salida, motor_pausado, ahora
 let pausado = false
@@ -156,8 +156,8 @@ window.onload = () => {
     CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
     document.title = version
     setInterval(() => {
-        ahora = new Date(); let h = ahora.getHours(); let m = ahora.getMinutes();
-        RL.innerHTML = ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m)
+        ahora = new Date(); let h = ahora.getHours(); let m = ahora.getMinutes(); let s = ahora.getSeconds();
+        RL.innerHTML = ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m) + '<span>:' + ((s < 10) ? '0' + s : s) + '</span>'
     }, 1000)
     prueva()
     /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))*/
@@ -173,8 +173,8 @@ window.onkeydown = e => {
     } else if (e.code === 'ArrowLeft') {
         //ATRAS()
     } else if (e.code === 'Space') {
-        e.stopPropagation();
-        return false      
+        // e.stopPropagation();
+        //return false      
     }
     console.log(e.code)
 
@@ -192,12 +192,12 @@ const prueva = () => {
     document.getElementById("quedan").innerHTML = s
     setTimeout(() => {
         document.getElementById("contador_prueba").style.width = '872px'
-    }, 1000)
+    }, 20)/*10-5000 */
 
     if (ahora < final) {
         setTimeout(() => {
             document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
             arranca()
-        }, 5000)
+        }, 4000)/*20-6000*/
     }
-}/**/
+}

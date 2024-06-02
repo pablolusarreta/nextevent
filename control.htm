@@ -29,6 +29,7 @@
 
 
 	<nav>
+		
 		<button onclick="ventanaSalida();" id="boton_crea_v" title="Abrir ventana de salida">
 			<div>></div>
 		</button>
@@ -49,11 +50,11 @@
 		<button onclick="ordena_paso(1)" id="boton_bajar" title="Bajar en la lista">
 			<div></div>
 		</button>
-		<button onclick="elimina_paso()" id="boton_limpia_memoria" title="Elimina paso seleccionado">
+		<button onclick="abre_form_alerta(elimina_paso)" id="boton_limpia_memoria" title="Elimina paso seleccionado">
 			<div>+</div>
 		</button>
 		<hr>
-		<div id="relog"></div>
+		
 		<button onclick="PAUSE()" id="boton_pausa">
 			<div>|&nbsp;|</div>
 		</button>
@@ -61,7 +62,7 @@
 			<div>GO</div>
 		</button>
 	</nav>
-
+	<div id="relog"></div>
 	<footer>
 		<div>
 			<div id="info"></div>
