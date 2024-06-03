@@ -1,4 +1,4 @@
-# n e x t e v e n t &nbsp;    <sub> 8.0.0</sub> 
+# n e x t e v e n t &nbsp;    <sub> 8 . 0 . 0</sub> 
 
 Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https://www.electronjs.org/) para  Windows, reproduce secuencias multimedia. 
 ## Instalación:
