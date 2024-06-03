@@ -3,6 +3,7 @@ const cierra_form = () => {
     FA.style.opacity = TL.style.opacity = "0";
 }
 const abre_form = () => {
+    carga_datos()
     FA.style.display = TL.style.display = "block";
     FA.childNodes[1].focus()
     setTimeout(() => { FA.style.opacity = TL.style.opacity = "1" }, 100)
@@ -23,7 +24,6 @@ const abre_form_alerta = f => {
     FA.style.height = '100px'
     abre_form()
 }
-let form_edit
 let mime = {
     'mp4': 'video/mp4',
     'webm': 'video/webm',
@@ -36,8 +36,9 @@ let mime = {
     'gif': 'image/gif',
     'png': 'image/png'
 }
+let form_edit
 //////////////////////////////////////////////////////////////////
-const abre_form_paso = (id) => {
+const abre_form_paso = id => {
     PA = PAtmp = pasos[id];
     FA.innerHTML = ''
     form_edit = new Array()
@@ -164,7 +165,7 @@ const abre_form_config = () => {
                         }))
                         //Eliminar lista completa y cerrar lel formulario
                         crea_salto(FA, '20px')
-                        crea_button(FA, 'ELIMINAR LISTA', '20%', '0', [], ()=>{abre_form_alerta(limpia_memoria)})
+                        crea_button(FA, 'ELIMINAR LISTA', '20%', '0', [], () => { abre_form_alerta(limpia_memoria) })
                         crea_button(FA, 'CERRAR', '20%', '60%', [], cierra_form)
 
                         // Config estilo  del formulario
