@@ -10,11 +10,11 @@ Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https:/
 `dist/win-unpacked/nextevent.exe`
 ## Especificaciones:
 * Puede reproducir cualquier fichero multimedia soportado por HTML5.
-Control de volumen de cada paso.
-Control acción cuando acaba un paso stop, siguiente o bucle.
-Control general tiempo de desvanecimiento de los ficheros de imagen/video ` 0s > 10s `.
-Dos modos de sincronía.
-Guardado de proyectos en formato JSON. 
+* Control de volumen de cada canal por separdo en cada paso.
+* Control de la acción cuando acaba un paso: stop, siguiente o bucle.
+* Control general tiempo de desvanecimiento de los ficheros de imagen/video ` 0s > 10s `.
+* Dos modos de sincronía: "SINCRONO" o "AUDIO ASINC".
+* Guardado de proyectos en formato JSON. 
 
 
 
@@ -35,7 +35,7 @@ Guardado de proyectos en formato JSON.
   * En este modo todos los pasos se reproducen sincrónicamente.
   * Los pasos no se pueden solapar, cuando se pulsa GO el paso actual es eliminado y se muestra el siguiente.
 * ### Modo SINCRONISMO : AUDIO ASINC
-  * En este modo se crean dos flujos uno con imágenes y videos y otro solo con los audios.
+  * En este modo se crean dos flujos, uno con imágenes y videos y otro solo con los audios.
 Si se esta reproduciendo una imagen y el siguiente paso es un audio la imagen quedara en la salida 
 mientras el sonido se reproduce, y no desaparecerá hasta que el siguiente paso sea una imagen o un video.
 De igual manera el audio sonara asta terminar o hasta que el siguiente paso sea otro audio.
