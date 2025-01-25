@@ -70,7 +70,6 @@ const creaVentana = (f, d) => {
 //////////////////////////////////////////////////////////////////////////////
 
 app.on('ready', () => {
-
 	const { session } = require('electron');
 	session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
 		if (permission === 'media') {
@@ -79,7 +78,6 @@ app.on('ready', () => {
 			callback(false);
 		}
 	})
-
 	vcontrol = creaVentana('control.htm', [1240, 800, 910, 750])
 });
 app.on('window-all-closed', () => {

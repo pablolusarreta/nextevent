@@ -182,6 +182,7 @@ window.onkeydown = e => {
 window.onbeforeunload = () => {
     index.cierra_salida()
 }
+
 const prueva = () => {
     // final Miercoles, 1 de Enero de 2025
     let final = 1767292145808
