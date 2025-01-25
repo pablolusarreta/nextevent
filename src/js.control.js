@@ -184,7 +184,7 @@ window.onbeforeunload = () => {
 }
 const prueva = () => {
     // final Miercoles, 1 de Enero de 2025
-    let final = 1735686000000
+    let final = 1767292145808
     let ahora = new Date().getTime()
     let diferencia = ahora - final
     let s = `<div>La prueba termina el ${new Date(final).toLocaleDateString('es-ES')}<br>
