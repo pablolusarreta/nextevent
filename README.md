@@ -23,6 +23,7 @@ Aplicación de escritorio creada con  [![N|Solid](src/img/electron.svg)](https:/
   * Ponemos el PC en modo pantalla extendida.
   * Hacemos click en el botón `[>]` para abrir la ventana de salida.
   * Arrastramos la ventana el escritorio extendido y hacemos click en ` Maximizar ventana `.
+  * Para salir de la pantalla completa hacemos doble click en cualquier parte de la pantalla.
 
 * ### Para reproducir solo audio:
   * Hacemos click en el botón `[>]` para abrir la ventana de salida.
