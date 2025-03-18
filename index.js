@@ -50,6 +50,7 @@ const creaVentana = (f, d) => {
 		minHeight: d[3],
 		backgroundColor: '#000',
 		show: true,
+		fullscreen: false,
 		icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
 		webPreferences: {
 			contextIsolation: false,
@@ -64,7 +65,7 @@ const creaVentana = (f, d) => {
 		slashes: true
 	}))
 	ventana.setMenu(null)
-	//ventana.webContents.openDevTools()
+	/*ventana.webContents.openDevTools()*/
 	return ventana
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -90,6 +91,14 @@ app.on('activate', () => {
 		vcontrol = creaVentana('control.htm', [1240, 800, 800, 750])
 	}
 });
+// Pantalla completa
+ipcMain.on('ON-fullscreen', () => {
+	vsalida.setFullScreen(true);
+});
+ipcMain.on('OFF-fullscreen', () => {
+	vsalida.setFullScreen(false);
+});
+
 /*if (process.env.NODE_ENV !== 'production') {
 	require('electron-reload')(__dirname, {
 		electron: path.join(__dirname, '../node_modules', '.bin', 'electron')

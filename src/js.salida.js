@@ -1,4 +1,5 @@
 const index = require('electron').remote.require('./index')
+const { ipcRenderer } = require('electron')
 let salida, salida_audio, config, ES, PA, salvaPantalla, OUPUTS //Elemento Seleccionado,  Paso Actual
 PA = false
 navigator.mediaDevices.enumerateDevices()
@@ -150,16 +151,19 @@ const carga_img = () => {
     ES = salida.appendChild(el)
 }
 //////////////////////////////////////////////////////////////////////////
+
+
+
 const info_salida = () => {
     index.info_salida([window.innerWidth, window.innerHeight])
 }
 const maximiza = () => {
     window.ondblclick = () => {
-        document.webkitExitFullscreen()
+        ipcRenderer.send('OFF-fullscreen');
         location.reload()
     }
     salida.innerHTML = ''
-    document.body.webkitRequestFullScreen()
+    ipcRenderer.send('ON-fullscreen');
     document.body.style.cursor = "none"
     info_salida()
 
