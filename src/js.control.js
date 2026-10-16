@@ -134,13 +134,6 @@ const arranca = () => {
     crea_lista_pasos()
     select_paso(id_select)
 }
-const quedan = t => {
-    t = Math.abs(t)
-    let dias = Math.floor(t / 86400000)
-    let horas = Math.floor((t % 86400000) / 3600000)
-    let minutos = Math.floor(((t % 86400000) % 3600000) / 60000)
-    return `${dias} Dias, ${horas} Horas y ${minutos} minutos.`
-}
 window.onload = () => {
     BV = document.getElementById("boton_crea_v")
     BG = document.getElementById("boton_go")
@@ -153,14 +146,16 @@ window.onload = () => {
     CDA = document.getElementById("contador_audio")
     RL = document.getElementById("relog")
     CD = document.getElementById("contador")
-    CD.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
+    RL.addEventListener('dblclick', () => { ipcRenderer.send('herramientas') })
     document.title = version
     setInterval(() => {
         ahora = new Date(); let h = ahora.getHours(); let m = ahora.getMinutes(); let s = ahora.getSeconds();
         RL.innerHTML = ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m) + '<span>:' + ((s < 10) ? '0' + s : s) + '</span>'
     }, 1000)
-    prueva()
-    /*document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))*/
+    //prueva()
+    
+    //document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
+
     arranca()
     //ventanaSalida()
 }
@@ -183,6 +178,14 @@ window.onbeforeunload = () => {
     index.cierra_salida()
 }
 
+/*
+const quedan = t => {
+    t = Math.abs(t)
+    let dias = Math.floor(t / 86400000)
+    let horas = Math.floor((t % 86400000) / 3600000)
+    let minutos = Math.floor(((t % 86400000) % 3600000) / 60000)
+    return `${dias} Dias, ${horas} Horas y ${minutos} minutos.`
+}
 const prueva = () => {
     // final Miercoles, 1 de Enero de 2025
     let final = 3067292145808
@@ -193,13 +196,14 @@ const prueva = () => {
     document.getElementById("quedan").innerHTML = s
     setTimeout(() => {
         document.getElementById("contador_prueba").style.width = '872px'
-    }, 20)/*10-5000 */
+    }, 20)//10-5000
 
     if (ahora < final) {
         setTimeout(() => {
             document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
             arranca()
-        }, 4000)/*20-6000*/
+        }, 4000)//20-6000
     }
     //arranca()
 }
+*/
