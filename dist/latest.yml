@@ -1,8 +1,8 @@
 version: 8.0.0
 files:
   - url: nextevent-Setup-8.0.0.exe
-    sha512: bP778m6n9mlPuelgOy7J1YxhrWKcY2coOi1EUskpxRLMfF4IJikxAEm2d89NdoqZq3e+xe1ZS4/vUzL4Ylkd8A==
-    size: 46148410
+    sha512: F6TiQw7MkaK19qKuiKdzEPh8lt0aJhTTLxS/FTaYFv4es4QEXzUQyOYk2nFo9uS1uwXXrTq1oive8dQvjSYwpw==
+    size: 46148163
 path: nextevent-Setup-8.0.0.exe
-sha512: bP778m6n9mlPuelgOy7J1YxhrWKcY2coOi1EUskpxRLMfF4IJikxAEm2d89NdoqZq3e+xe1ZS4/vUzL4Ylkd8A==
-releaseDate: '2026-10-16T14:32:02.403Z'
+sha512: F6TiQw7MkaK19qKuiKdzEPh8lt0aJhTTLxS/FTaYFv4es4QEXzUQyOYk2nFo9uS1uwXXrTq1oive8dQvjSYwpw==
+releaseDate: '2026-10-17T16:54:18.396Z'

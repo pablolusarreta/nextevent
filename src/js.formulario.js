@@ -115,7 +115,8 @@ const abre_form_config = () => {
                         // Volumen de sonido por defecto y aplicar a todos
                         crea_salto(FA, '0px')
                         form_edit.push(crea_input_range(FA, 'Volumen', '60%', '0', [0, 100, 1, config.vol, [' %']], () => {
-                            config.vol = Number(form_edit[1].value);
+                            config.vol = Number(form_edit[1].value)
+                            guarda_config()
                         }))
                         crea_button(FA, 'APLICAR A TODOS', '20%', '140px', [], () => {
                             for (var i in pasos) {
@@ -148,12 +149,12 @@ const abre_form_config = () => {
                             guarda_config()
                         }))
                         crea_salto(FA, '12px')
-                        form_edit.push(crea_input_select(FA, 'Salida sonido B 2-3', '82%', '0', [0, 2, 1, config.ouputB, OutSel], () => {
+                        form_edit.push(crea_input_select(FA, 'Salida sonido B 3-4', '82%', '0', [0, 2, 1, config.ouputB, OutSel], () => {
                             config.ouputB = Number(form_edit[4].value);
                             guarda_config()
                         }))
                         crea_salto(FA, '12px')
-                        form_edit.push(crea_input_select(FA, 'Salida sonido C 4-5', '82%', '0', [0, 2, 1, config.ouputC, OutSel], () => {
+                        form_edit.push(crea_input_select(FA, 'Salida sonido C 5-6', '82%', '0', [0, 2, 1, config.ouputC, OutSel], () => {
                             config.ouputC = Number(form_edit[5].value);
                             guarda_config()
                         }))

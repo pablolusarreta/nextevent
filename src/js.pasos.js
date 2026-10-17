@@ -31,7 +31,8 @@ function paso_activo(IDU) {
             let tmp = altPaso * (Number(i) + 5)
             console.log(window.innerHeight, tmp)
             if (tmp > window.innerHeight) {
-                PS.scrollTo(0, altPaso * escrol++)
+                let escroles = Math.floor((tmp - window.innerHeight) / altPaso )
+                PS.scrollTo(0, altPaso * escroles)
                 console.log('fuera de pantalla', altPaso, ' ', escrol)
             } else {
                 escrol = 1

@@ -153,11 +153,9 @@ window.onload = () => {
         RL.innerHTML = ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m) + '<span>:' + ((s < 10) ? '0' + s : s) + '</span>'
     }, 1000)
     //prueva()
-    
     //document.getElementsByTagName('body')[0].removeChild(document.getElementById("quedan"))
-
-    arranca()
     //ventanaSalida()
+    arranca()
 }
 
 window.onkeydown = e => {

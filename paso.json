@@ -1,12 +1,37 @@
-{
-    "IDU": 1561045854740,
-    "fin": 0,
-    "id": "0",
-    "mime": "video/mp4",
-    "nom": "VID_20190310_101613749.mp4",
-    "ruta": "VID/VID_20190310_101613749.mp4",
-    "text": "rymeynr56487909862354856",
-    "tipo": "video",
-    "vol": "75",
-    "fade": "2"
-}
+[
+    {
+        "IDU": 1561045854740,
+        "fin": 0,
+        "id": "0",
+        "mime": "video/mp4",
+        "nom": "VID_20190310_101613749.mp4",
+        "ruta": "VID/VID_20190310_101613749.mp4",
+        "text": "rymeynr56487909862354856",
+        "tipo": "video",
+        "vol": "75",
+        "fade": "2"
+    },
+    {
+        "IDU": 1792161768409,
+        "fin": 0,
+        "id": 0,
+        "mime": "audio/mpeg",
+        "nom": "Caminando en menor EXTENDIDA 01.mp3",
+        "ouput": 0,
+        "ruta": "C:/Users/pablo/Google Drive/Personal/Audio/Musica IA/Caminando en menor EXTENDIDA 01.mp3",
+        "text": "",
+        "tipo": "audio",
+        "volL": 0,
+        "volR": 100
+    },
+    {
+        "vol": 100,
+        "fin": 0,
+        "fade": 1,
+        "fichero": "",
+        "ouputB": 2,
+        "ouputC": 5,
+        "ouputA": 4,
+        "flujo": 1
+    }
+]
